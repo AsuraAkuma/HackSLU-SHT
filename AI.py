@@ -1,7 +1,12 @@
 import requests
+import json
 
 # Replace with your OpenRouter API key
-API_KEY = "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"
+
+with open('config.json', 'r') as file:
+    data = json.load(file)
+
+API_KEY = data["APIKEY"]
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Define the headers for the API request
@@ -32,5 +37,3 @@ def mental_health_chatbot():
         print(f"Chatbot: {response}")
 
 mental_health_chatbot()
-
-
