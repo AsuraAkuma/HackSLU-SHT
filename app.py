@@ -1,3 +1,4 @@
+from flask import Flask, jsonify, request
 import requests
 
 # Replace with your OpenRouter API key
@@ -10,6 +11,9 @@ headers = {
     "Content-Type": "application/json"
 }
 
+app = Flask(__name__)
+
+# Function to interact with the AI chatbot (from ai.py)
 def chat_with_ai(user_input):
     data = {
         "model": "deepseek/deepseek-chat:free",
@@ -21,16 +25,24 @@ def chat_with_ai(user_input):
     else:
         return "Sorry, I'm having trouble processing your request right now. Please try again later."
 
-def mental_health_chatbot():
-    print("Hello! I'm here to listen. How are you feeling today? (Type 'exit' to stop)")
-    while True:
-        user_input = input("You: ")
-        if user_input.lower() == "exit":
-            print("Chatbot: Take care! Remember, you're not alone.")
-            break
-        response = chat_with_ai(user_input)
-        print(f"Chatbot: {response}")
+@app.route('/')
+def home():
+    return "Welcome to the chatbot!"
 
-mental_health_chatbot()
+@app.route('/chat', methods=['POST'])
+def chat():
+    data = request.get_json()
 
+    # Check if the message is in the request
+    if not data or "message" not in data:
+        return jsonify({"error": "Message is required"}), 400
 
+    user_message = data["message"]
+
+    # Get the chatbot's response
+    bot_response = chat_with_ai(user_message)
+
+    return jsonify({"response": bot_response})
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5001)
