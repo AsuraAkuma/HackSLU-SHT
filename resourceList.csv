@@ -1,0 +1,21 @@
+issue_name,resource_type,resource_info,description
+Anxiety,Hotline,1-800-555-ANXIETY,National Anxiety Helpline, available 24/7
+Anxiety,Email,anxiety@helpline.com,Email support for anxiety-related concerns
+Anxiety,Website,http://www.anxietyrelief.com,A website offering resources, exercises, and articles to relieve anxiety
+Anxiety,Support Group,http://www.anxietysupportgroup.com,An online, anonymous support group for people experiencing anxiety
+Depression,Hotline,1-800-273-TALK,National Suicide Prevention Lifeline for those in distress
+Depression,Email,support@depressionsupport.com,Email support for people dealing with depression
+Depression,Website,http://www.depressionsupport.org,A website providing therapy, support, and advice for those suffering from depression
+Depression,Support Group,http://www.depressionsupportgroup.com,An online support group for people struggling with depression
+PTSD,Hotline,1-800-555-PTSD,Veterans Crisis Line providing 24/7 support for PTSD-related issues
+PTSD,Email,ptsd@helpline.com,Email support for individuals experiencing PTSD
+PTSD,Website,http://www.ptsdhelp.org,A website providing resources, support, and advice for PTSD sufferers
+PTSD,Support Group,http://www.ptsdpeerhelp.com,An anonymous support group for people coping with PTSD
+Eating Disorders,Hotline,1-800-555-EDHELP,Hotline for individuals struggling with eating disorders
+Eating Disorders,Email,support@eatingdisordersupport.com,Email support for individuals dealing with eating disorders
+Eating Disorders,Website,http://www.eatingdisordersupport.org,A website offering resources and articles for overcoming eating disorders
+Eating Disorders,Support Group,http://www.eatingdisordersanonymous.com,An online support group for people with eating disorders
+LGBTQ+ Issues,Hotline,1-800-555-LGBTQ,LGBTQ+ Crisis Support Hotline
+LGBTQ+ Issues,Email,support@lgbtqhelp.com,Email support for LGBTQ+ individuals
+LGBTQ+ Issues,Website,http://www.lgbtqmentalhealth.org,A website offering mental health resources for LGBTQ+ individuals
+LGBTQ+ Issues,Support Group,http://www.lgbtqsupportgroup.com,An online support group for LGBTQ+ individuals facing mental health challenges
