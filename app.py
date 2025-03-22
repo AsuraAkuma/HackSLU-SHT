@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 import requests
+import mysql.connector
 import json
 
 # Replace with your OpenRouter API key
@@ -18,6 +19,14 @@ headers = {
 
 app = Flask(__name__)
 
+def get_db_connection():
+    return mysql.connector.connect(
+        host="your-mysql-host",   # Example: "localhost" or "127.0.0.1"
+        user="your-username",
+        password="your-password",
+        database="your-database"
+    )
+
 # Function to interact with the AI chatbot (from ai.py)
 def chat_with_ai(user_input):
     data = {
@@ -34,7 +43,7 @@ def chat_with_ai(user_input):
 def home():
     return "Welcome to the chatbot!"
 
-@app.route('/chat', methods=['POST'])
+@app.route('/api', methods=['POST'])
 def chat():
     data = request.get_json()
 
@@ -48,6 +57,77 @@ def chat():
     bot_response = chat_with_ai(user_message)
 
     return jsonify({"response": bot_response})
+
+@app.route('/api/appointments/<int:userid>/<int:appt_id>', methods=['GET'])
+def get_appointments(userid, appt_id):
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+
+    query = "SELECT * FROM appointments WHERE user_id = %s AND appt_id = %s"
+    cursor.execute(query, (userid, appt_id))
+
+    appointment = cursor.fetchone()  # Fetch one appointment
+
+    cursor.close()
+    conn.close()
+
+    if appointment:
+        return jsonify(appointment), 200
+    else:
+        return jsonify({"error": "Appointment not found"}), 404
+
+@app.route('/api/appointments/<int:userid>', methods=['POST'])
+def create_appointments(userid):
+    data = request.get_json()
+
+    if not data or "date" not in data or "time" not in data or "description" not in data:
+        return jsonify({"error": "Missing required fields"}), 400  # Bad Request
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    try:
+        cursor.execute("""
+            INSERT INTO appointments (user_id, date, time, description)
+            VALUES (%s, %s, %s, %s)
+        """, (userid, data["date"], data["time"], data["description"]))
+
+        conn.commit()  # Save changes
+        appt_id = cursor.lastrowid  # Get the inserted appointment ID
+        conn.close()
+
+        return jsonify({"message": "Appointment created", "appointment_id": appt_id}), 201  # Created
+    except Exception as e:
+        conn.rollback()  # Undo changes if an error occurs
+        conn.close()
+        return jsonify({"error": str(e)}), 500  # Internal Server Error
+
+@app.route('/api/appointments/<int:userid>/<int:appt_id>', methods=['DELETE'])
+def delete_appointments(userid, appt_id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    try:
+        # Check if the appointment exists for the given user
+        cursor.execute("SELECT * FROM appointments WHERE appt_id = %s AND user_id = %s", (appt_id, userid))
+        appointment = cursor.fetchone()
+
+        if not appointment:
+            conn.close()
+            return jsonify({"error": "Appointment not found"}), 404  # Not Found
+
+        # Delete the appointment
+        cursor.execute("DELETE FROM appointments WHERE appt_id = %s AND user_id = %s", (appt_id, userid))
+        conn.commit()
+        conn.close()
+
+        return jsonify({"message": "Appointment deleted"}), 200  # Success
+    except Exception as e:
+        conn.rollback()  # Undo changes if an error occurs
+        conn.close()
+        return jsonify({"error": str(e)}), 500  # Internal Server Error
+
+        
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
