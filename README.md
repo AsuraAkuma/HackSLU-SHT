@@ -1,1 +1,7 @@
-# HackSLU-SHT
+# HackSLU Team "SHT"
+
+## Team
+- Henry
+- Justin
+- Patrick
+- Adam
