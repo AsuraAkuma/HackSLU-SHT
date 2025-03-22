@@ -1,7 +1,7 @@
 import requests
 
 # Replace with your OpenRouter API key
-API_KEY = "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"
+API_KEY = "sk-or-v1-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"
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Define the headers for the API request
