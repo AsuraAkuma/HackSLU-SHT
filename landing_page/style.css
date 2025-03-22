@@ -1,0 +1,953 @@
+.static-landing-page,
+.static-landing-page * {
+  box-sizing: border-box;
+}
+.static-landing-page {
+  background: #ffffff;
+  height: 4576px;
+  position: relative;
+  overflow: hidden;
+}
+.reviews-from-clients {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 48px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  position: absolute;
+  left: calc(50% - 640px);
+  top: 3622px;
+  width: 625px;
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sm, 32px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 1280px;
+  position: absolute;
+  left: 80px;
+  top: 3728px;
+}
+.customer-quote {
+  background: #ffffff;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: var(--var-color-border, #e6e6e6);
+  border-width: 1px;
+  padding: var(--spacing-sm, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m, 48px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+}
+.a-terrific-piece-of-praise {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+}
+.avatar {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.avatar2 {
+  background: linear-gradient(to left, #d9d9d9, #d9d9d9);
+  border-radius: 50%;
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  object-fit: cover;
+}
+.frame-2610301 {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.quandale-dingleton {
+  color: #000000;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.patient {
+  color: #828282;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.customer-quote2 {
+  background: #ffffff;
+  border-radius: 12px;
+  border-style: solid;
+  border-color: var(--var-color-border, #e6e6e6);
+  border-width: 1px;
+  padding: var(--spacing-sm, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m, 48px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.a-fantastic-bit-of-feedback {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+}
+.adeph-hipster {
+  color: #000000;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.a-genuinely-glowing-review {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+}
+.gabe-itch {
+  color: #000000;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.navigation-footer {
+  background: #ffffff;
+  height: 264px;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  overflow: hidden;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s, 24px);
+  align-items: flex-end;
+  justify-content: center;
+  width: 187px;
+  position: absolute;
+  right: 249px;
+  top: 48px;
+}
+.policies {
+  color: #000000;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.terms-and-conditions {
+  color: #454545;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.cookies {
+  color: #454545;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.privacy {
+  color: #454545;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.items2 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s, 24px);
+  align-items: flex-end;
+  justify-content: center;
+  width: 187px;
+  position: absolute;
+  right: 0px;
+  top: 48px;
+}
+.services {
+  color: #000000;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.pro-finder {
+  color: #454545;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.schedule-builder {
+  color: #454545;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.book-consultation {
+  color: #454545;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sht-online-consulting-and-therapy {
+  color: #000000;
+  text-align: left;
+  font-family: var(--subheading-font-family, "Inter-Regular", sans-serif);
+  font-size: var(--subheading-font-size, 24px);
+  line-height: var(--subheading-line-height, 150%);
+  font-weight: var(--subheading-font-weight, 400);
+  position: absolute;
+  left: 80px;
+  top: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.social-icons {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-xs, 8px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  left: 80px;
+  top: 176px;
+}
+.buttons-icon {
+  border-radius: 4px;
+  padding: 8px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  overflow: visible;
+}
+.icon2 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  overflow: visible;
+}
+.icon3 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  overflow: visible;
+}
+.icon4 {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  overflow: visible;
+}
+.divider {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #e6e6e6;
+  border-width: 1px 0 0 0;
+  width: 1280px;
+  height: 0px;
+  position: absolute;
+  left: 80px;
+  top: 1px;
+  transform-origin: 0 0;
+  transform: rotate(0deg) scale(1, 1);
+}
+.logo {
+  width: 91px;
+  height: 70px;
+  position: absolute;
+  left: 62px;
+  top: 93px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.navigation {
+  background: #ffffff;
+  height: 164px;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+.items3 {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-m, 48px);
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 80px;
+  top: 56px;
+}
+.resources {
+  color: #000000;
+  text-align: left;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.professionals {
+  color: #000000;
+  text-align: left;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.about {
+  color: #000000;
+  text-align: left;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button {
+  background: #000000;
+  border-radius: 8px;
+  padding: 14px 24px 14px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: var(
+    --button-shadow-box-shadow,
+    0px 1px 2px 0px rgba(0, 0, 0, 0.05)
+  );
+}
+.chat {
+  color: #ffffff;
+  text-align: left;
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--small-text-font-size, 16px);
+  line-height: var(--small-text-line-height, 150%);
+  font-weight: var(--small-text-font-weight, 500);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sht-online-consulting-and-therapy2 {
+  color: #000000;
+  text-align: left;
+  font-family: var(--body-text-font-family, "Inter-Medium", sans-serif);
+  font-size: var(--body-text-font-size, 20px);
+  line-height: var(--body-text-line-height, 150%);
+  font-weight: var(--body-text-font-weight, 500);
+  position: absolute;
+  left: 80px;
+  top: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.hero-image {
+  border-radius: 8px;
+  width: 88.82%;
+  height: 716px;
+  position: absolute;
+  right: 5.56%;
+  left: 5.62%;
+  top: calc(50% - 1217px);
+  overflow: hidden;
+  object-fit: cover;
+}
+.image {
+  border-radius: 8px 0px 0px 8px;
+  width: 734px;
+  height: 734px;
+  position: absolute;
+  left: 706px;
+  top: 1910px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.meet-shaetis {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 48px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  position: absolute;
+  left: 80px;
+  top: 1910px;
+  width: 624px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 516px;
+  position: absolute;
+  left: 81px;
+  top: 2000px;
+}
+.text2 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.smart-support-anytime {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  width: 515px;
+}
+.shaetis-provides-instant-ai-powered-assistance-to-guide-you-through-questions-resources-and-solutions-24-7 {
+  color: #828282;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 400;
+  position: relative;
+  width: 515px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.personalized-insights {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  width: 515px;
+}
+.with-adaptive-learning-shaetis-tailors-responses-to-your-needs-making-every-interaction-relevant-and-helpful {
+  color: #828282;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 400;
+  position: relative;
+  width: 515px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.direct-access-to-experts {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+}
+.shaetis-connects-you-with-the-right-professionals-on-our-team-ensuring-you-get-expert-support-when-you-need-it {
+  color: #828282;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.buttons {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  left: 81px;
+  top: 2584px;
+}
+.button2 {
+  background: #11b3a6;
+  border-radius: 8px;
+  padding: 12px 24px 12px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: var(
+    --button-shadow-box-shadow,
+    0px 1px 2px 0px rgba(0, 0, 0, 0.05)
+  );
+}
+.chat-now {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.buttons2 {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 3435px;
+}
+.button3 {
+  background: #fbc71c;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  padding: 12px 24px 12px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: var(
+    --button-shadow-box-shadow,
+    0px 1px 2px 0px rgba(0, 0, 0, 0.05)
+  );
+}
+.see-more-professionals {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.section {
+  background: #f7f7f7;
+  width: 1440px;
+  height: 236px;
+  position: absolute;
+  left: 0px;
+  top: 4076px;
+  overflow: hidden;
+}
+.buttons3 {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 80px;
+  top: 80px;
+}
+.button4 {
+  background: #11b3a6;
+  border-radius: 8px;
+  padding: 20px 32px 20px 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: var(
+    --button-shadow-box-shadow,
+    0px 1px 2px 0px rgba(0, 0, 0, 0.05)
+  );
+}
+.button5 {
+  background: #e6e6e6;
+  border-radius: 8px;
+  padding: 20px 32px 20px 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: var(
+    --button-shadow-box-shadow,
+    0px 1px 2px 0px rgba(0, 0, 0, 0.05)
+  );
+}
+.contact-a-rep {
+  color: var(--var-color-text, rgba(0, 0, 0, 0.9));
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.your-well-being-matters-let-s-talk {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 48px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  position: absolute;
+  left: calc(50% - 640px);
+  top: 60px;
+  width: 625px;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 844px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 740px;
+}
+.page-title {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.support-healing-therapy {
+  color: #000000;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 80px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+.credible-and-compassionate-help-and-therapy-at-your-fingertips {
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  font-family: var(--subheading-font-family, "Inter-Regular", sans-serif);
+  font-size: var(--subheading-font-size, 24px);
+  line-height: var(--subheading-line-height, 150%);
+  font-weight: var(--subheading-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 405px;
+  position: absolute;
+  left: 81px;
+  top: 2846px;
+}
+.image2 {
+  border-radius: 8px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 405px;
+  position: relative;
+  overflow: hidden;
+  object-fit: cover;
+}
+.copy2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 381px;
+  position: relative;
+}
+.dr-jane-doe-md {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+}
+.psychiatrist-sigma-university {
+  color: #828282;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card2 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 405px;
+  position: absolute;
+  left: 518px;
+  top: 2846px;
+}
+.dr-erik-sinson-ph-d {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+}
+.psychologist-st-anford-university {
+  color: #828282;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card3 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 405px;
+  position: absolute;
+  left: 955px;
+  top: 2846px;
+}
+.dr-karen-horneyed-md {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+}
+.therapist-university-of-second-choice {
+  color: #828282;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 24px;
+  line-height: 150%;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.meet-our-team {
+  color: #000000;
+  text-align: left;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 48px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  position: absolute;
+  left: calc(50% - 639px);
+  top: 2740px;
+  width: 624px;
+}
+.frame-1321316143 {
+  width: 809px;
+  height: 570px;
+  position: absolute;
+  left: 316px;
+  top: 150px;
+  overflow: hidden;
+  object-fit: cover;
+}
