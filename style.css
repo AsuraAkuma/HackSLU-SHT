@@ -1,3 +1,11 @@
+:root {
+    --green: #10aea3;
+    --navy-blue: #003e65;
+    --baby-blue: #ffcb20;
+    --yellow: #c3e4ed;
+    --white: #fff;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #f5f5f5;
@@ -28,7 +36,7 @@ body {
 }
 
 .header {
-    background: #b73a3a;
+    background: var(--navy-blue);
     color: white;
     padding: 10px;
     text-align: center;
@@ -55,7 +63,7 @@ input {
 }
 
 button {
-    background: #673AB7;
+    background: var(--navy-blue);
     color: white;
     border: none;
     padding: 10px 15px;

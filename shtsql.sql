@@ -21,16 +21,16 @@ USE `sht`;
 
 -- Dumping structure for table sht.help_resources
 CREATE TABLE IF NOT EXISTS `help_resources` (
-  `resourceId` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `issue_name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `resource_type` tinyint NOT NULL,
   `resource_info` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `description` text COLLATE utf8mb4_general_ci,
-  PRIMARY KEY (`resourceId`) USING BTREE
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table sht.help_resources: ~0 rows (approximately)
-REPLACE INTO `help_resources` (`resourceId`, `issue_name`, `resource_type`, `resource_info`, `description`) VALUES
+-- Dumping data for table sht.help_resources: ~16 rows (approximately)
+REPLACE INTO `help_resources` (`id`, `issue_name`, `resource_type`, `resource_info`, `description`) VALUES
 	(1, 'Anxiety', 1, '1-800-555-ANXIETY', 'National Anxiety Helpline, available 24/7'),
 	(2, 'Anxiety', 2, 'anxiety@helpline.com', 'Email support for anxiety-related concerns'),
 	(3, 'Anxiety', 3, 'http://www.anxietyrelief.com', 'A website offering resources, exercises, and articles to relieve anxiety'),
@@ -50,7 +50,7 @@ REPLACE INTO `help_resources` (`resourceId`, `issue_name`, `resource_type`, `res
 
 -- Dumping structure for table sht.professionals
 CREATE TABLE IF NOT EXISTS `professionals` (
-  `professionalId` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `availability` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -59,11 +59,11 @@ CREATE TABLE IF NOT EXISTS `professionals` (
   `website` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `profession` tinyint NOT NULL,
   `description` text COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`professionalId`) USING BTREE
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=182 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table sht.professionals: ~0 rows (approximately)
-REPLACE INTO `professionals` (`professionalId`, `name`, `location`, `availability`, `phone`, `email`, `website`, `profession`, `description`) VALUES
+-- Dumping data for table sht.professionals: ~51 rows (approximately)
+REPLACE INTO `professionals` (`id`, `name`, `location`, `availability`, `phone`, `email`, `website`, `profession`, `description`) VALUES
 	(131, 'Dr. Alice Smith', 'Couch, USA', 'Mon-Sun 12:00AM-11:59PM', '(123) 456-7890', 'alice.smith@procrastinate.com', 'www.dralicesmithbinges.com', 2, 'Dr. Smith helps clients embrace the beauty of \'just one more episode\' while navigating the delicate balance of snacks and naps.'),
 	(132, 'Dr. John Doe', 'Inbox, USA', 'Mon-Fri 09:00AM-05:00PM', '(234) 567-8901', 'john.doe@inboxpanic.com', 'www.drjohndoeavoids.com', 2, 'Dr. Doe specializes in minimizing the existential dread of unread emails and teaching the fine art of the polite ghost.'),
 	(133, 'Dr. Emily Johnson', 'Mind Palace, USA', 'Mon-Fri 10:00PM-02:00AM', '(345) 678-9012', 'emily.johnson@whatif.com', 'www.dremilyjohnsonspirals.com', 2, 'Dr. Johnson guides clients through endless hypothetical scenarios with a compassionate eye roll and a cup of herbal tea.'),
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `professions` (
   PRIMARY KEY (`professionId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table sht.professions: ~0 rows (approximately)
+-- Dumping data for table sht.professions: ~5 rows (approximately)
 REPLACE INTO `professions` (`professionId`, `name`) VALUES
 	(1, 'Psychologist'),
 	(2, 'Therapist'),
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `resourcetypes` (
   PRIMARY KEY (`typeId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table sht.resourcetypes: ~0 rows (approximately)
+-- Dumping data for table sht.resourcetypes: ~4 rows (approximately)
 REPLACE INTO `resourcetypes` (`typeId`, `name`) VALUES
 	(1, 'Hotline'),
 	(2, 'Email'),
