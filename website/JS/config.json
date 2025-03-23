@@ -1,4 +1,8 @@
 {
+<<<<<<< HEAD
     "APIKEY" : "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",
     "apiURL": "http://127.0.0.1:5504/api"
+=======
+    "apiURL": "https://apisht.kurosan.dev/api"
+>>>>>>> 887fad50375cf48f1db2a896f00f8ed9e2b88a90
 }

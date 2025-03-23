@@ -2,9 +2,9 @@ import mysql.connector
 
 def getConnection():
     # Replace the placeholders with your actual database credentials
-    host = 'localhost'
-    user = 'root'
-    password = 'root'
+    host = '127.0.0.1'
+    user = 'sht'
+    password = '8R3ud2Yei2AsNO'
     database = 'sht'
     port = 3306
 
