@@ -14,7 +14,7 @@ function getConnection()
 {
     $servername = "localhost";
     $username = "root";
-    $password = "root";
+    $password = "h6wZFJGzfCud7F?f";
     $dbname = "sht";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usr']) && isset($_POS
 
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="./JS/login.js" type="module"></script>
 </head>
 
@@ -89,42 +89,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usr']) && isset($_POS
 
 </html>
 
-    <script>
-        // Removed the event listener for the "Create an account?" link
-        document.getElementById('register-button').addEventListener('click', async function(event) {
-            event.preventDefault();
-            const registerError = document.getElementById('register-error');
-            registerError.innerHTML = '';
-            const email = document.getElementById('register-email').value;
-            const password = document.getElementById('register-password').value;
-            if (email && password) {
-                const req = await fetch('register.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        email,
-                        password
-                    })
-                }).catch(error => {
-                    registerError.innerHTML = 'Server error';
-                });
-                if (req.status === 200) {
-                    const res = await req.json();
-                    if (res.error) {
-                        registerError.innerHTML = res.error;
-                    } else {
-                        window.location.href = 'login.php';
-                    }
+<script>
+    // Removed the event listener for the "Create an account?" link
+    document.getElementById('register-button').addEventListener('click', async function(event) {
+        event.preventDefault();
+        const registerError = document.getElementById('register-error');
+        registerError.innerHTML = '';
+        const email = document.getElementById('register-email').value;
+        const password = document.getElementById('register-password').value;
+        if (email && password) {
+            const req = await fetch('register.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            }).catch(error => {
+                registerError.innerHTML = 'Server error';
+            });
+            if (req.status === 200) {
+                const res = await req.json();
+                if (res.error) {
+                    registerError.innerHTML = res.error;
                 } else {
-                    registerError.innerHTML = 'Server error';
+                    window.location.href = 'login.php';
                 }
             } else {
-                registerError.innerHTML = 'Please fill in all fields';
+                registerError.innerHTML = 'Server error';
             }
-        });
-    </script>
+        } else {
+            registerError.innerHTML = 'Please fill in all fields';
+        }
+    });
+</script>
 </body>
 
 </html>
