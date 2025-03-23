@@ -8,7 +8,7 @@
   <!-- <link rel="stylesheet" href="./vars.css"> -->
   <link rel="stylesheet" href="./CSS/base.css">
   <link rel="stylesheet" href="./CSS/chatbot.css">
-  <!-- <script src="./JS/chatbot.js"></script> -->
+  <script src="./JS/chatbot.js" type="module"></script>
   <title>Document</title>
 </head>
 
@@ -34,19 +34,19 @@
       <p class="chatbot-header-title">Chat Shaetis</p>
     </div>
     <div class="chatbot-messages" id="chatbot-messages">
-      <div class="chatbot-message">
+      <!-- <div class="chatbot-message">
         <p class="chatbot-message-text">Hello! I am Shaetis, your virtual assistant. How can I help you today?</p>
         <p class="chatbot-message-time">Sent 12:00 PM</p>
       </div>
       <div class="chatbot-message chatbot-message-right">
         <p class="chatbot-message-text">Hi can you help me with my sadness?</p>
         <p class="chatbot-message-time">Sent 12:01 PM</p>
-      </div>
+      </div> -->
 
     </div>
     <div class="chatbot-input">
       <input type="text" class="chatbot-input-text" id="chatbot-input-text" placeholder="Type your message here...">
-      <button class="chatbot-input-button" onclick="sendMessage()">Send</button>
+      <button class="chatbot-input-button" id="chatbot-input-button">Send</button>
     </div>
   </div>
 

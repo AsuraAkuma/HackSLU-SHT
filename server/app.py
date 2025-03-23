@@ -3,6 +3,7 @@ import requests
 import json
 from dbConnect import getConnection  # Import the correct function
 import bcrypt 
+from flask_cors import CORS  # Import CORS
 
 # Replace with your OpenRouter API key
 with open('config.json', 'r') as file:
@@ -18,6 +19,7 @@ headers = {
 }
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:3000"}})  # Enable CORS with whitelist
 
 # Test the database connection when the app starts
 conn = getConnection()  # Try to get the connection
