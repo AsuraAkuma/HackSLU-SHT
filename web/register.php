@@ -64,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="./CSS/login.css">
+<<<<<<< HEAD
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const registerForm = document.getElementById("registerForm");
@@ -76,12 +77,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             });
         });
     </script>
+=======
+    <script src="./JS/register.js" type="module"></script>
+>>>>>>> eb4b29187a9cefd2e1dcfba49fe75e019da24c21
 </head>
 
 <body>
     <div class="register-container"></div>
         <h1>Register</h1>
-        <form id="registerForm" method="POST">
+        <form id="registerForm">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
@@ -96,8 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <p id="register-error" style="color: red;"></p>
 
-            <button type="submit">Register</button>
+            <button type="submit" id="register-button">Register</button>
         </form>
     </div>
 </body>
+
 </html>

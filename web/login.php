@@ -64,11 +64,17 @@
 <html class="body w3-dark-gray">
 <head>
     <title>Login</title>
+<<<<<<< HEAD
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     <link rel="stylesheet" href="style1.css"> 
+=======
+    <link rel="stylesheet" href="./CSS/login.css">
+    <script src="./JS/login.js" type="module"></script>
+>>>>>>> eb4b29187a9cefd2e1dcfba49fe75e019da24c21
 </head>
 <body>
+<<<<<<< HEAD
     <main class="w3-panel w3-cell-row">
         <div class="w3-cell" style="width: 30%"></div>
         <div class="w3-cell w3-card-4 w3-border w3-round-large" style="width: 40%">
@@ -123,5 +129,19 @@
             }
         });
     </script>
+=======
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+>>>>>>> eb4b29187a9cefd2e1dcfba49fe75e019da24c21
 </body>
 </html>
