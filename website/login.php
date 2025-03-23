@@ -62,37 +62,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usr']) && isset($_POS
 ?>
 
 <!DOCTYPE html>
-<html class="body w3-dark-gray">
+<html class="w3-dark-gray">
 
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     <script src="./JS/login.js" type="module"></script>
 </head>
 
 <body>
-    <main class="w3-panel w3-cell-row">
-        <div class="w3-cell" style="width: 30%"></div>
-        <div class="w3-cell w3-card-4 w3-border w3-round-large" style="width: 40%">
-            <form class="w3-panel" action="#" method="POST">
+    <main class="w3-container w3-center w3-padding-large" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div class="w3-card-4 w3-light-gray w3-round-large w3-padding-large w3-margin-auto" style="max-width: 400px;">
+            <h2 class="w3-center">Login</h2>
+            <form action="#" method="POST" class="w3-container">
                 <p>
-                    <input class="w3-input" placeholder="username" name="usr" required autofocus>
+                    <input class="w3-input w3-border w3-round" placeholder="Username" name="usr" required autofocus>
                 </p>
                 <p>
-                    <input class="w3-input" type="password" placeholder="password" name="pwd" required>
+                    <input class="w3-input w3-border w3-round" type="password" placeholder="Password" name="pwd" required>
                 </p>
                 <p>
-                    <button class="w3-input w3-button w3-green w3-round">Log In</button>
+                    <button class="w3-button w3-green w3-round w3-block">Log In</button>
                 </p>
-                <p>
-                    <!-- Ensure the link points to register.php -->
-                    <a href="register.php" class="w3-mobile" id="register-link">Create an account?</a>
+                <p class="w3-center">
+                    <a href="register.php" class="w3-text-blue">Create an account?</a>
                 </p>
             </form>
-            <!-- ...existing code for the hidden registration form... -->
         </div>
-        <div class="w3-cell" style="width: 30%"></div>
     </main>
+</body>
+
+</html>
 
     <script>
         // Removed the event listener for the "Create an account?" link
