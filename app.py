@@ -1,10 +1,9 @@
 from flask import Flask, jsonify, request
 import requests
-import mysql.connector
 import json
+from dbConnect import getConnection  # Import the correct function
 
 # Replace with your OpenRouter API key
-
 with open('config.json', 'r') as file:
     data = json.load(file)
 
@@ -19,13 +18,14 @@ headers = {
 
 app = Flask(__name__)
 
-def get_db_connection():
-    return mysql.connector.connect(
-        host="your-mysql-host",   # Example: "localhost" or "127.0.0.1"
-        user="your-username",
-        password="your-password",
-        database="your-database"
-    )
+# Test the database connection when the app starts
+conn = getConnection()  # Try to get the connection
+if conn:
+    print("Connection successful!")
+    conn.close()  # Close the connection after testing
+else:
+    print("Failed to connect to the database.")
+
 
 # Function to interact with the AI chatbot (from ai.py)
 def chat_with_ai(user_input):
@@ -58,9 +58,30 @@ def chat():
 
     return jsonify({"response": bot_response})
 
+
+@app.route('/api/professionals', methods=['GET'])
+def get_professionals():
+    conn = getConnection()  # Use the correct connection function
+    cursor = conn.cursor(dictionary=True)
+
+    # Query to fetch all professionals
+    query = "SELECT * FROM professionals"
+    cursor.execute(query)
+
+    professionals = cursor.fetchall()  # Fetch all professionals
+
+    cursor.close()
+    conn.close()
+
+    if professionals:
+        return jsonify(professionals), 200  # Return list of professionals
+    else:
+        return jsonify({"error": "No professionals found"}), 404  # Not Found
+
+
 @app.route('/api/appointments/<int:userid>/<int:appt_id>', methods=['GET'])
 def get_appointments(userid, appt_id):
-    conn = get_db_connection()
+    conn = getConnection()  # Use the correct connection function
     cursor = conn.cursor(dictionary=True)
 
     query = "SELECT * FROM appointments WHERE user_id = %s AND appt_id = %s"
@@ -83,7 +104,7 @@ def create_appointments(userid):
     if not data or "date" not in data or "time" not in data or "description" not in data:
         return jsonify({"error": "Missing required fields"}), 400  # Bad Request
 
-    conn = get_db_connection()
+    conn = getConnection()  # Use the correct connection function
     cursor = conn.cursor()
 
     try:
@@ -104,7 +125,7 @@ def create_appointments(userid):
 
 @app.route('/api/appointments/<int:userid>/<int:appt_id>', methods=['DELETE'])
 def delete_appointments(userid, appt_id):
-    conn = get_db_connection()
+    conn = getConnection()  # Use the correct connection function
     cursor = conn.cursor()
 
     try:
@@ -126,8 +147,6 @@ def delete_appointments(userid, appt_id):
         conn.rollback()  # Undo changes if an error occurs
         conn.close()
         return jsonify({"error": str(e)}), 500  # Internal Server Error
-
-        
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)
