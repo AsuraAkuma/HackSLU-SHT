@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 import requests
 import json
 from dbConnect import getConnection  # Import the correct function
+import bcrypt 
 
 # Replace with your OpenRouter API key
 with open('config.json', 'r') as file:
@@ -42,6 +43,69 @@ def chat_with_ai(user_input):
 @app.route('/api/ping', methods=['GET'])
 def ping():
     return "Welcome to the chatbot!"
+
+# Sign up endpoint
+@app.route('/api/signup', methods=['POST'])
+def signup():
+    data = request.get_json()
+
+    if not data or 'username' not in data or 'password' not in data:
+        return jsonify({"error": "Username and password are required"}), 400
+    
+    username = data['username']
+    password = data['password']
+    
+    # Hash the password before saving it
+    hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+
+    conn = getConnection()
+    cursor = conn.cursor()
+
+    # Check if the username already exists
+    cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
+    user = cursor.fetchone()
+
+    if user:
+        cursor.close()
+        conn.close()
+        return jsonify({"error": "Username already exists"}), 400
+
+    # Insert the user into the database
+    cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, hashed_password))
+    conn.commit()
+
+    user_id = cursor.lastrowid  # Get the newly created user's ID
+    cursor.close()
+    conn.close()
+
+    return jsonify({"message": "User created successfully", "user_id": user_id}), 201
+# Login endpoint
+@app.route('/api/login', methods=['POST'])
+def login():
+    data = request.get_json()
+
+    if not data or 'username' not in data or 'password' not in data:
+        return jsonify({"error": "Username and password are required"}), 400
+
+    username = data['username']
+    password = data['password']
+
+    conn = getConnection()
+    cursor = conn.cursor(dictionary=True)
+
+    # Fetch the user by username
+    cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
+    user = cursor.fetchone()
+
+    if user and bcrypt.checkpw(password.encode('utf-8'), user['password'].encode('utf-8')):
+        user_id = user['user_id']
+        cursor.close()
+        conn.close()
+        return jsonify({"message": "Login successful", "user_id": user_id}), 200
+
+    cursor.close()
+    conn.close()
+    return jsonify({"error": "Invalid username or password"}), 401
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
