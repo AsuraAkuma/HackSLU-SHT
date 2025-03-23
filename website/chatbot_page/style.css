@@ -1,12 +1,37 @@
-.chatbot,
-.chatbot * {
-  box-sizing: border-box;
+:root {
+  --green: #10aea3;
+  --navy-blue: #003e65;
+  --baby-blue: #ffcb20;
+  --yellow: #c3e4ed;
+  --white: #fff;
 }
+* {padding: 0px; margin: 0px;}
+
+body {
+  font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 0px;
+  position: relative;
+  border: 2px solid red;
+  flex-direction: column;
+}
+
+/* MAIN STYLE NOT CHATBOT*/
+
 .chatbot {
   background: #ffffff;
-  height: 2628px;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  border: 2px solid blue;
+  top: 0px;
+  margin-top: 0px;
 }
 .navigation-footer {
   background: #ffffff;
@@ -349,7 +374,7 @@
   transform: scale(1.1); /* Slightly enlarges the button */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle hover shadow */
 }
-.chat {
+.chat-old {
   color: #ffffff;
   text-align: left;
   font-family: var(--small-text-font-family, "Inter-Medium", sans-serif);
@@ -374,4 +399,124 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+
+/*bruh*/
+
+
+.chat {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.chatbox {
+  width: 2000px;
+  margin-left: 200px;
+  margin-right: 200px;
+  height: 450px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  background: var(--navy-blue);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background: #eee;
+}
+
+.input-box {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+button {
+  background: var(--navy-blue);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.message {
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  width: fit-content;
+  max-width: 80%;
+}
+
+.user {
+  align-self: flex-end;
+  background: var(--green);
+  color: white;
+  margin-left: auto;
+  text-align: right; 
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn.cancel {
+  background-color: #dc3545;
+}
+
+.btn:hover {
+  opacity: 0.9;
 }
