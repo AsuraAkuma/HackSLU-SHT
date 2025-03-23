@@ -19,7 +19,7 @@ headers = {
 }
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:3000"}})  # Enable CORS with whitelist
+CORS(app, resources={r"/*": {"origins": ["http://127.0.0.1:3000", "http://localhost:3000","http://localhost"]}})
 
 # Test the database connection when the app starts
 conn = getConnection()  # Try to get the connection
@@ -53,7 +53,7 @@ def signup():
 
     # Ensure username, password, and email are provided
     if not data or 'username' not in data or 'password' not in data or 'email' not in data:
-        return jsonify({"error": "Username, password, and email are required"}), 400
+        return jsonify({"error": "Username, password, and email are required"}), 200
     
     username = data['username']
     password = data['password']
@@ -72,7 +72,7 @@ def signup():
     if user:
         cursor.close()
         conn.close()
-        return jsonify({"error": "Username already exists"}), 400
+        return jsonify({"error": "Username already exists"}), 200
     
     # Check if the email already exists
     cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
@@ -81,7 +81,7 @@ def signup():
     if user_by_email:
         cursor.close()
         conn.close()
-        return jsonify({"error": "Email already exists"}), 400
+        return jsonify({"error": "Email already exists"}), 200
 
     # Insert the user into the database
     cursor.execute("INSERT INTO users (username, password, email) VALUES (%s, %s, %s)", (username, hashed_password, email))
@@ -91,7 +91,7 @@ def signup():
     cursor.close()
     conn.close()
 
-    return jsonify({"message": "User created successfully", "user_id": user_id}), 201
+    return jsonify({"message": "User created successfully", "user_id": user_id}), 200
 
 # Login endpoint
 @app.route('/api/login', methods=['POST'])
@@ -99,7 +99,7 @@ def login():
     data = request.get_json()
 
     if not data or 'username' not in data or 'password' not in data:
-        return jsonify({"error": "Username and password are required"}), 400
+        return jsonify({"error": "Username and password are required"}), 200
 
     username = data['username']
     password = data['password']
@@ -128,7 +128,7 @@ def chat():
 
     # Check if the message is in the request
     if not data or "message" not in data:
-        return jsonify({"error": "Message is required"}), 400
+        return jsonify({"error": "Message is required"}), 200
 
     user_message = data["message"]
 
@@ -188,7 +188,7 @@ def create_appointments(user_id):
     data = request.get_json()
 
     if not data or "date" not in data or "time" not in data or "description" not in data:
-        return jsonify({"error": "Missing required fields"}), 400  # Bad Request
+        return jsonify({"error": "Missing required fields"}), 200  # Bad Request
 
     conn = getConnection()  # Use the correct connection function
     cursor = conn.cursor()
@@ -216,7 +216,7 @@ def create_appointments(user_id):
             "time": new_appointment["time"],
             "created_at": new_appointment["created_at"],
             "description": new_appointment["description"]
-        }), 201  # Created
+        }), 200  # Created
     except Exception as e:
         conn.rollback()  # Undo changes if an error occurs
         conn.close()
