@@ -7,22 +7,36 @@ ini_set('display_errors', '1');
 session_start();
 
 if (!isset($_SESSION['usr'])) {
-
     header('Location: login.php');
     die;
 }
+
+// Validate API URL in config
+if (!isset($config['apiURL']) || empty($config['apiURL'])) {
+    die('Error: API URL is missing or invalid in the configuration file.');
+}
+
 // Fetch professionals from the API
-$response = file_get_contents($config['apiURL'] . '/professionals');
-$professionals = json_decode($response, true);
-
-if ($professionals === null) {
-    die('Error fetching professionals from API.');
+$response = @file_get_contents($config['apiURL'] . '/professionals');
+if ($response === false) {
+    $professionals = [];
+    $error_message = 'Unable to fetch professionals from the API. Please try again later.';
+} else {
+    $professionals = json_decode($response, true);
+    if ($professionals === null) {
+        $professionals = [];
+        $error_message = 'Invalid response received from the API.';
+    }
 }
+
 $options = '';
-foreach ($professionals as $professional) {
-    $options .= '<option value="' . htmlspecialchars($professional['professionalId']) . '">' . htmlspecialchars($professional['name']) . '</option>';
+if (!empty($professionals)) {
+    foreach ($professionals as $professional) {
+        $options .= '<option value="' . htmlspecialchars($professional['professionalId']) . '">' . htmlspecialchars($professional['name']) . '</option>';
+    }
+} else {
+    $options = '<option value="" disabled>No professionals available</option>';
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +57,7 @@ foreach ($professionals as $professional) {
         <div class="header-section" id="header-section-left">
             <p class="header-title">SHT - Online Consulting and Therapy</p>
         </div>
-        <div class="header-section" id="header-section-right">
+        <div class="header-section" id="header-section-right"></div>
             <button class="header-button" onclick="goToUrl('./resources.html')">Resources</button>
             <button class="header-button" onclick="goToUrl('./professionals.html')">Professionals</button>
             <button class="header-button" onclick="goToUrl('./about.html')">About</button>
@@ -57,15 +71,14 @@ foreach ($professionals as $professional) {
 
     <div class="appointment-container">
         <h2 class="appointment-title">Schedule Your Appointment</h2>
-
+        <?php if (isset($error_message)): ?>
+            <p class="error-message"><?php echo htmlspecialchars($error_message); ?></p>
+        <?php endif; ?>
         <div class="dropdown-group">
             <label for="professional">Choose a Professional:</label>
             <select id="professional" class="dropdown">
                 <option value="" disabled selected>Select a professional</option>
                 <?php echo $options; ?>
-                <!-- <option value="dr-smith">Dr. Smith</option>
-                <option value="dr-johnson">Dr. Johnson</option>
-                <option value="dr-williams">Dr. Williams</option> -->
             </select>
         </div>
 
@@ -130,7 +143,7 @@ foreach ($professionals as $professional) {
                 <a href="./" class="footer-right-section-link">Terms of Service</a>
                 <a href="./" class="footer-right-section-link">Cookies</a>
             </div>
-            <div class="footer-right-section">
+            <div class="footer-right-section"></div>
                 <p class="footer-right-section-title">Services</p>
                 <a href="./" class="footer-right-section-link">Pro Finder</a>
                 <a href="./" class="footer-right-section-link">Schedule Builder</a>
@@ -150,17 +163,4 @@ foreach ($professionals as $professional) {
         var time = document.getElementById('time').value;
 
         if (professional && date && time) {
-            var params = new URLSearchParams({
-                professional: professional,
-                date: date,
-                time: time
-            }).toString();
-
-            window.location.href = './appt_confirmed.html?' + params;
-        } else {
-            alert('Please fill out all fields before booking an appointment.');
-        }
-    }
-
-    document.querySelector('.submit-button').addEventListener('click', bookAppointment);
 </script>
