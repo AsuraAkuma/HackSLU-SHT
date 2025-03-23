@@ -1,18 +1,27 @@
 <?php
- // Turn on error reporting.
- error_reporting(E_ALL);
- ini_set('display_errors', '1');
- 
- session_start();
- 
- if(!isset($_SESSION['usr'])){
+$config = json_decode(file_get_contents('./JS/config.json'), true);
+// Turn on error reporting.
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
-     header('Location: login.php');
-     die;
+session_start();
 
- }
+if (!isset($_SESSION['usr'])) {
 
+    header('Location: login.php');
+    die;
+}
+// Fetch professionals from the API
+$response = file_get_contents($config['apiURL'] . '/professionals');
+$professionals = json_decode($response, true);
 
+if ($professionals === null) {
+    die('Error fetching professionals from API.');
+}
+$options = '';
+foreach ($professionals as $professional) {
+    $options .= '<option value="' . htmlspecialchars($professional['professionalId']) . '">' . htmlspecialchars($professional['name']) . '</option>';
+}
 
 ?>
 <!DOCTYPE html>
@@ -26,7 +35,7 @@
     <link rel="stylesheet" href="./CSS/base.css">
     <link rel="stylesheet" href="./CSS/scheduler.css">
     <!-- <script src="./JS/chatbot.js"></script> -->
-    <title>Document</title>
+    <title>Book a Consultation</title>
 </head>
 
 <body class="body">
@@ -34,10 +43,10 @@
         <div class="header-section" id="header-section-left">
             <p class="header-title">SHT - Online Consulting and Therapy</p>
         </div>
-            <div class="header-section" id="header-section-right">
-                <button class="header-button" onclick="goToUrl('./resources.html')">Resources</button>
-                <button class="header-button" onclick="goToUrl('./professionals.html')">Professionals</button>
-                <button class="header-button" onclick="goToUrl('./about.html')">About</button>
+        <div class="header-section" id="header-section-right">
+            <button class="header-button" onclick="goToUrl('./resources.html')">Resources</button>
+            <button class="header-button" onclick="goToUrl('./professionals.html')">Professionals</button>
+            <button class="header-button" onclick="goToUrl('./about.html')">About</button>
             <button class="header-button-special" onclick="goToUrl('./chatbot.html')">Chat</button>
         </div>
     </header>
@@ -48,22 +57,23 @@
 
     <div class="appointment-container">
         <h2 class="appointment-title">Schedule Your Appointment</h2>
-    
+
         <div class="dropdown-group">
             <label for="professional">Choose a Professional:</label>
             <select id="professional" class="dropdown">
                 <option value="" disabled selected>Select a professional</option>
-                <option value="dr-smith">Dr. Smith</option>
+                <?php echo $options; ?>
+                <!-- <option value="dr-smith">Dr. Smith</option>
                 <option value="dr-johnson">Dr. Johnson</option>
-                <option value="dr-williams">Dr. Williams</option>
+                <option value="dr-williams">Dr. Williams</option> -->
             </select>
         </div>
-    
+
         <div class="dropdown-group">
             <label for="date">Select a Date:</label>
             <input type="date" id="date" class="date-picker">
         </div>
-    
+
         <div class="dropdown-group">
             <label for="time">Select a Time:</label>
             <select id="time" class="dropdown">
@@ -89,8 +99,8 @@
                 <option value="5:00pm">5:00 PM</option>
             </select>
         </div>
-    
-        <a href="appt_confirmed.html"><button class="submit-button">Book Appointment</button></a>
+
+        <button class="submit-button" type="submit">Book Appointment</button>
     </div>
 
     <footer class="footer">
@@ -103,14 +113,14 @@
             </div>
             <div class="footer-left-socials">
                 <a href="https://www.facebook.com/"><img src="./Media/facebook.svg" alt="facebook"
-                    class="footer-left-socials-icon"></a>
+                        class="footer-left-socials-icon"></a>
                 <a href="https://www.linkedin.com/"><img src="./Media/linkedin.svg" alt="linkedin"
-                    class="footer-left-socials-icon"></a>
+                        class="footer-left-socials-icon"></a>
                 <a href="https://www.youtube.com/"><img src="./Media/youtube.svg" alt="youtube"
-                    class="footer-left-socials-icon"></a>
+                        class="footer-left-socials-icon"></a>
                 <a href="https://www.instragram.com/"><img src="./Media/instagram.svg" alt="instagram"
-                    class="footer-left-socials-icon"></a>
-    
+                        class="footer-left-socials-icon"></a>
+
             </div>
         </div>
         <div class="footer-right">
@@ -126,5 +136,31 @@
                 <a href="./" class="footer-right-section-link">Schedule Builder</a>
                 <a href="./" class="footer-right-section-link">Book Consultation</a>
             </div>
-        </footer>
-    </body>
+    </footer>
+</body>
+
+<script>
+    function goToUrl(url) {
+        window.location.href
+    }
+
+    function bookAppointment() {
+        var professional = document.getElementById('professional').value;
+        var date = document.getElementById('date').value;
+        var time = document.getElementById('time').value;
+
+        if (professional && date && time) {
+            var params = new URLSearchParams({
+                professional: professional,
+                date: date,
+                time: time
+            }).toString();
+
+            window.location.href = './appt_confirmed.html?' + params;
+        } else {
+            alert('Please fill out all fields before booking an appointment.');
+        }
+    }
+
+    document.querySelector('.submit-button').addEventListener('click', bookAppointment);
+</script>

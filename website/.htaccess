@@ -1,9 +1,21 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
+
+# Rule 1: Remove .php extension from URLs
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php [L]
 
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
+# Rule 2: Redirect .php URLs to clean URLs
+RewriteCond %{THE_REQUEST} \s/([a-zA-Z0-9_/]+)\.php[\s?] [NC]
+RewriteRule ^([a-zA-Z0-9_/]+)\.php$ /$1 [R=301,L]
+
+# Rule 3: Remove .html extension from URLs
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
+
+# Rule 4: Redirect .html URLs to clean URLs
+RewriteCond %{THE_REQUEST} \s/([a-zA-Z0-9_/]+)\.html[\s?] [NC]
+RewriteRule ^([a-zA-Z0-9_/]+)\.html$ /$1 [R=301,L]

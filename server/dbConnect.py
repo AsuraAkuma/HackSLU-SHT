@@ -4,7 +4,7 @@ def getConnection():
     # Replace the placeholders with your actual database credentials
     host = 'localhost'
     user = 'root'
-    password = 'root'
+    password = 'h6wZFJGzfCud7F?f'
     database = 'sht'
     port = 3306
 
