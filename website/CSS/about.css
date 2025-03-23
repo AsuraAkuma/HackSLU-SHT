@@ -99,6 +99,10 @@
   position: absolute;
   left: 731px;
   top: 2720px;
+
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .patrick-suarez {
@@ -136,6 +140,10 @@
   position: absolute;
   left: 150px;
   top: 1972px;
+
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .justin-zhang {
@@ -173,6 +181,10 @@
   position: absolute;
   left: 731px;
   top: 1228px;
+
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .henry-wang {
@@ -210,6 +222,10 @@
   position: absolute;
   left: 150px;
   top: 454px;
+
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .adam-gardener {
