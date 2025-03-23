@@ -81,7 +81,7 @@ button {
 
 .user {
     align-self: flex-end;
-    background: #673AB7;
+    background: var(--green);
     color: white;
     margin-left: auto;
     text-align: right; 
