@@ -1,13 +1,3 @@
-window.addEventListener('load', function () {
-    // Page loaded
-    // Variables
-    const messageContainer = document.getElementById('chat-box-messages');
-    const messageInput = document.getElementById('chat-box-input');
-    const messageSend = document.getElementById('chat-box-send');
-    let messages = [];
-
-});
-
 // Functions
 function addMessage(message) {
     messages.push(message);
