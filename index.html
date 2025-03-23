@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatbox</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .user {
+            align-self: flex-end;
+            background: #673AB7;
+            color: white;
+            margin-left: auto; /* Push the message to the right */
+            text-align: right; /* Align text to the right */
+        }
+    </style>
+</head>
+<body>
+
+<div class="chatbox">
+    <div class="header">ChatBot</div>
+    <div class="messages" id="chat">
+        <div class="message">Hello! How can I help?</div>
+    </div>
+    <div class="input-box">
+        <input type="text" id="userInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    function sendMessage() {
+        let input = document.getElementById("userInput");
+        let text = input.value.trim();
+        if (text !== "") {
+            let chat = document.getElementById("chat");
+
+            // Create user message
+            let userMessage = document.createElement("div");
+            userMessage.className = "message user";
+            userMessage.innerText = text;
+            chat.appendChild(userMessage);
+
+            // Clear input field
+            input.value = "";
+            chat.scrollTop = chat.scrollHeight;
+        }
+    }
+</script>
+
+</body>
+</html>
