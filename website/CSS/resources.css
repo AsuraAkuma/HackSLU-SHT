@@ -1,5 +1,16 @@
 :root {}
 
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
 .static-resources,
 .static-resources * {
   box-sizing: border-box;
@@ -216,6 +227,10 @@
   right: 58.67%;
   left: 5.55%;
   top: 1566px;
+
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .national-suicide-hotline {
@@ -392,6 +407,10 @@
   right: 58.6%;
   left: 5.62%;
   top: 2612px;
+  
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 .mental-health-hotline {
@@ -453,6 +472,10 @@
   flex-shrink: 0;
   width: 515px;
   position: relative;
+
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
 ._00 {
