@@ -39,9 +39,9 @@ def chat_with_ai(user_input):
     else:
         return "Sorry, I'm having trouble processing your request right now. Please try again later."
 
-# @app.route('/')
-# def home():
-#     return "Welcome to the chatbot!"
+@app.route('/api/ping', methods=['GET'])
+def ping():
+    return "Welcome to the chatbot!"
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
