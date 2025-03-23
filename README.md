@@ -1,7 +1,7 @@
 # HackSLU Team "SHT"
 
 ## Team
-- Henry
-- Justin
-- Patrick
-- Adam
+- Henry Wang
+- Justin Zhang
+- Patrick Suarez
+- Adam Gardener
