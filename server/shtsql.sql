@@ -147,15 +147,19 @@ INSERT IGNORE INTO `resourcetypes` (`typeId`, `name`) VALUES
 
 -- Dumping structure for table sht.users
 CREATE TABLE IF NOT EXISTS `users` (
-  `userId` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `user_id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL UNIQUE,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL UNIQUE,
   `password` text COLLATE utf8mb4_general_ci NOT NULL,
   `userType` tinyint NOT NULL DEFAULT (1),
-  PRIMARY KEY (`userId`)
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table sht.users: ~0 rows (approximately)
+INSERT INTO `users` (`username`, `email`, `password`) VALUES
+('john_doe', 'john@example.com', '$2b$12$abcdefghijABCDEFGHIJ1234567890ABC'),
+('dr_smith', 'smith@example.com', '$2b$12$1234567890abcdefghijABCDEFGHIJABC'),
+('agent_kate', 'kate@example.com', '$2b$12$abcdef1234567890ABCDEFGHijklmnop');
 
 -- Dumping structure for table sht.usertypes
 CREATE TABLE IF NOT EXISTS `usertypes` (
@@ -169,6 +173,28 @@ INSERT IGNORE INTO `usertypes` (`typeId`, `name`) VALUES
 	(1, 'patient'),
 	(2, 'professional'),
 	(3, 'agent');
+
+-- Dumping structure for table sht.appointments
+CREATE TABLE IF NOT EXISTS `appointments` (
+  `appt_id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `date` DATE NOT NULL,
+  `time` TIME NOT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+  `description` TEXT NOT NULL,
+  PRIMARY KEY (`appt_id`),
+  FOREIGN KEY (`user_id`) REFERENCES `users` (`user_Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table sht.appointments: ~0 rows (approximately)
+INSERT INTO `appointments` (user_id, date, time, description) 
+VALUES 
+    (1, '2025-04-01', '10:00:00', 'Initial therapy consultation'),
+    (2, '2025-04-02', '11:30:00', 'Follow-up session with psychologist'),
+    (3, '2025-04-03', '14:00:00', 'Cognitive Behavioral Therapy session'),
+    (1, '2025-04-05', '16:00:00', 'Group therapy session'),
+    (2, '2025-04-06', '09:30:00', 'Mental health assessment');
+
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

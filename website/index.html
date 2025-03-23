@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./vars.css">
-  <link rel="stylesheet" href="./style.css">
-  
-  
+  <!-- <link rel="stylesheet" href="./vars.css"> -->
+  <link rel="stylesheet" href="./CSS/index.css">
+  <!-- <script src="./JS/index.js"></script> -->
+
   <style>
-   a,
-   button,
-   input,
-   select,
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   * {
-       box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-       border: none;
-       text-decoration: none;
-       background: none;
-   
-       -webkit-font-smoothing: antialiased;
-   }
-   
-   menu, ol, ul {
-       list-style-type: none;
-       margin: 0;
-       padding: 0;
-   }
-   </style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
   <title>Document</title>
 </head>
+
 <body>
   <div class="static-landing-page">
     <div class="reviews-from-clients">Reviews from Clients</div>
@@ -44,7 +48,7 @@
       <div class="customer-quote">
         <div class="a-terrific-piece-of-praise">“A terrific piece of praise”</div>
         <div class="avatar">
-          <img class="avatar2" src="avatar1.png" />
+          <img class="avatar2" src="./Media/avatar1.png" />
           <div class="frame-2610301">
             <div class="quandale-dingleton">Quandale Dingleton</div>
             <div class="patient">Patient</div>
@@ -56,7 +60,7 @@
           “A fantastic bit of feedback”
         </div>
         <div class="avatar">
-          <img class="avatar2" src="avatar3.png" />
+          <img class="avatar2" src="./Media/avatar3.png" />
           <div class="frame-2610301">
             <div class="adeph-hipster">Adeph Hipster</div>
             <div class="patient">Patient</div>
@@ -66,7 +70,7 @@
       <div class="customer-quote2">
         <div class="a-genuinely-glowing-review">“A genuinely glowing review”</div>
         <div class="avatar">
-          <img class="avatar2" src="avatar5.png" />
+          <img class="avatar2" src="./Media/avatar5.png" />
           <div class="frame-2610301">
             <div class="gabe-itch">Gabe Itch</div>
             <div class="patient">Patient</div>
@@ -92,33 +96,33 @@
       </div>
       <div class="social-icons">
         <div class="buttons-icon">
-          <img class="icon" src="icon0.svg" />
+          <img class="icon" src="./Media/icon0.svg" />
         </div>
         <div class="buttons-icon">
-          <img class="icon2" src="icon1.svg" />
+          <img class="icon2" src="./Media/icon1.svg" />
         </div>
         <div class="buttons-icon">
-          <img class="icon3" src="icon2.svg" />
+          <img class="icon3" src="./Media/icon2.svg" />
         </div>
         <div class="buttons-icon">
-          <img class="icon4" src="icon3.svg" />
+          <img class="icon4" src="./Media/icon3.svg" />
         </div>
       </div>
       <div class="divider"></div>
-      <img class="logo" src="logo0.png" />
+      <img class="logo" src="./Media/logo0.png" />
     </div>
     <div class="navigation">
       <div class="items3">
-        <a href="../resources_page/index.html">
+        <a href="./resources.php">
           <div class="resources">Resources</div>
         </a>
-        <a href="../professionals_page/index.html">
+        <a href="./professionals.php">
           <div class="professionals">Professionals</div>
         </a>
-        <a href="../newabout/index.html">
+        <a href="./about.php">
           <div class="about">About</div>
         </a>
-        <a href="../chatbot_page/index.html">
+        <a href="./chatbot.php">
           <div class="button">
             <div class="chat">Chat</div>
           </div>
@@ -128,15 +132,14 @@
         SHT - Online Consulting and Therapy
       </div>
     </div>
-    <img class="hero-image" src="hero-image0.png" />
-    <img class="image" src="image0.png" />
+    <img class="hero-image" src="./Media/hero-image0.png" />
+    <img class="image" src="./Media/image0.png" />
     <div class="meet-shaetis">Meet Shaetis!</div>
     <div class="text">
       <div class="text2">
         <div class="smart-support-anytime">Smart Support, Anytime</div>
         <div
-          class="shaetis-provides-instant-ai-powered-assistance-to-guide-you-through-questions-resources-and-solutions-24-7"
-        >
+          class="shaetis-provides-instant-ai-powered-assistance-to-guide-you-through-questions-resources-and-solutions-24-7">
           Shaetis provides instant, AI-powered assistance to guide you through
           questions, resources, and solutions—24/7.
         </div>
@@ -144,8 +147,7 @@
       <div class="text2">
         <div class="personalized-insights">Personalized Insights</div>
         <div
-          class="with-adaptive-learning-shaetis-tailors-responses-to-your-needs-making-every-interaction-relevant-and-helpful"
-        >
+          class="with-adaptive-learning-shaetis-tailors-responses-to-your-needs-making-every-interaction-relevant-and-helpful">
           With adaptive learning, Shaetis tailors responses to your needs, making
           every interaction relevant and helpful.
         </div>
@@ -153,22 +155,21 @@
       <div class="text2">
         <div class="direct-access-to-experts">Direct Access to Experts</div>
         <div
-          class="shaetis-connects-you-with-the-right-professionals-on-our-team-ensuring-you-get-expert-support-when-you-need-it"
-        >
+          class="shaetis-connects-you-with-the-right-professionals-on-our-team-ensuring-you-get-expert-support-when-you-need-it">
           Shaetis connects you with the right professionals on our team, ensuring
           you get expert support when you need it.
         </div>
       </div>
     </div>
     <div class="buttons">
-      <a href="../chatbot_page/index.html">
+      <a href="./chatbot_page/index.html">
         <div class="button2">
           <div class="chat-now">Chat now</div>
         </div>
       </a>
     </div>
     <div class="buttons2">
-      <a href="../professionals_page/index.html">
+      <a href="./professionals_page/index.html">
         <div class="button3">
           <div class="see-more-professionals">See more professionals</div>
         </div>
@@ -176,12 +177,12 @@
     </div>
     <div class="section">
       <div class="buttons3">
-        <a href="../chatbot_page/index.html">
+        <a href="./chatbot_page/index.html">
           <div class="button4">
             <div class="chat-now">Chat now</div>
           </div>
         </a>
-        <a href="../professionals_page/index.html">
+        <a href="./professionals_page/index.html">
           <div class="button5">
             <div class="contact-a-rep">Contact a Rep</div>
           </div>
@@ -195,14 +196,13 @@
       <div class="page-title">
         <div class="support-healing-therapy">Support Healing Therapy</div>
         <div
-          class="credible-and-compassionate-help-and-therapy-at-your-fingertips"
-        >
+          class="credible-and-compassionate-help-and-therapy-at-your-fingertips">
           Credible and compassionate help and therapy at your fingertips.
         </div>
       </div>
     </div>
     <div class="card">
-      <img class="image2" src="image1.png" />
+      <img class="image2" src="./Media/image1.png" />
       <div class="copy2">
         <div class="dr-jane-doe-md">Dr. Jane Doe MD</div>
         <div class="psychiatrist-sigma-university">
@@ -213,7 +213,7 @@
       </div>
     </div>
     <div class="card2">
-      <img class="image2" src="image2.png" />
+      <img class="image2" src="./Media/image2.png" />
       <div class="copy2">
         <div class="dr-erik-sinson-ph-d">Dr. Erik Sinson PhD</div>
         <div class="psychologist-st-anford-university">
@@ -224,7 +224,7 @@
       </div>
     </div>
     <div class="card3">
-      <img class="image2" src="image3.png" />
+      <img class="image2" src="./Media/image3.png" />
       <div class="copy2">
         <div class="dr-karen-horneyed-md">Dr. Karen Horneyed MD</div>
         <div class="therapist-university-of-second-choice">
@@ -235,8 +235,9 @@
       </div>
     </div>
     <div class="meet-our-team">Meet our Team!</div>
-    <img class="frame-1321316143" src="frame-13213161430.png" />
+    <img class="frame-1321316143" src="./Media/frame-13213161430.png" />
   </div>
-  
+
 </body>
+
 </html>
