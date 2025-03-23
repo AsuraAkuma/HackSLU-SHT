@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./vars.css">
-  <link rel="stylesheet" href="./style.css">
-  
-  
+  <!-- <link rel="stylesheet" href="./vars.css"> -->
+  <link rel="stylesheet" href="./CSS/resources.css">
+  <!-- <script src="./JS/resources.js"></script> -->
+
+
   <style>
-   a,
-   button,
-   input,
-   select,
-   h1,
-   h2,
-   h3,
-   h4,
-   h5,
-   * {
-       box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-       border: none;
-       text-decoration: none;
-       background: none;
-   
-       -webkit-font-smoothing: antialiased;
-   }
-   
-   menu, ol, ul {
-       list-style-type: none;
-       margin: 0;
-       padding: 0;
-   }
-   </style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
   <title>Document</title>
 </head>
+
 <body>
   <div class="static-resources">
     <div
@@ -45,8 +50,7 @@
         background: url(header-with-image0.png) center;
         background-size: cover;
         background-repeat: no-repeat;
-      "
-    >
+      ">
       <div class="dimmer"></div>
       <div class="copy">
         <div class="page-title">
@@ -59,28 +63,28 @@
     </div>
     <div class="navigation">
       <div class="items">
-        <a href="../resources_page/index.html">
+        <a href="./resources.php">
           <div class="resources2">Resources</div>
         </a>
-        <a href="../professionals_page/index.html">
+        <a href="./professionals.php">
           <div class="professionals">Professionals</div>
         </a>
-        <a href="../newabout/index.html">
+        <a href="./about.php">
           <div class="about">About</div>
         </a>
-        <a href="../chatbot_page/index.html">
+        <a href="./chatbot.php">
           <div class="button">
             <div class="chat">Chat</div>
           </div>
         </a>
       </div>
-      <a href="../landing_page/index.html">
+      <a href="./index.php">
         <div class="sht-online-consulting-and-therapy">
           SHT - Online Consulting and Therapy
         </div>
       </a>
     </div>
-    <img class="image" src="image0.png" />
+    <img class="image" src="./Media/image0.png" />
     <div class="copy2">
       <div class="national-suicide-hotline">National Suicide Hotline</div>
       <div class="available-24-7-988">
@@ -94,30 +98,12 @@
         </div>
         <div class="button3">
           <a href="https://988lifeline.org">
-          <div class="visit-website">Visit Website</div>
+            <div class="visit-website">Visit Website</div>
           </a>
         </div>
       </div>
     </div>
-    <div class="copy3">
-      <div class="nami">NAMI</div>
-      <div class="national-alliance-on-health-illness-800-950-6264">
-        National Alliance on Health &amp; Illness
-        <br />
-        800-950-6264
-      </div>
-      <div class="buttons2">
-        <div class="button2">
-          <div class="call-now">Call now</div>
-        </div>
-        <a href="https://www.nami.org">
-        <div class="button4">
-          <div class="visit-website">Visit Website</div>
-        </div>
-        </a>
-      </div>
-    </div>
-    <img class="image2" src="image1.png" />
+    <img class="image2" src="./Media/image1.png" />
     <div class="copy4">
       <div class="mental-health-hotline">Mental Health Hotline</div>
       <div class="available-24-7-866-903-3787">
@@ -130,22 +116,21 @@
           <div class="call-now">Call now</div>
         </div>
         <a href="https://mentalhealthhotline.org">
-        <div class="button3">
-          <div class="visit-website">Visit Website</div>
-        </div>
+          <div class="button3">
+            <div class="visit-website">Visit Website</div>
+          </div>
         </a>
       </div>
     </div>
-    <img class="image3" src="image2.png" />
+    <img class="image3" src="./Media/image2.png" />
     <div class="list">
       <div class="copy5">
         <div class="_00">
-          <img class="icon-globe" src="icon-globe0.svg" />
+          <img class="icon-globe" src="./Media/icon-globe0.svg" />
         </div>
         <div class="subheading">Subheading</div>
         <div
-          class="body-text-for-whatever-you-d-like-to-say-add-main-takeaway-points-quotes-anecdotes-or-even-a-very-very-short-story"
-        >
+          class="body-text-for-whatever-you-d-like-to-say-add-main-takeaway-points-quotes-anecdotes-or-even-a-very-very-short-story">
           Body text for whatever you’d like to say. Add main takeaway points,
           quotes, anecdotes, or even a very very short story.
         </div>
@@ -153,13 +138,12 @@
       <div class="copy5">
         <div class="_00">
           <div class="frame-1321316141">
-            <img class="icon-lock-closed" src="icon-lock-closed0.svg" />
+            <img class="icon-lock-closed" src="./Media/icon-lock-closed0.svg" />
           </div>
         </div>
         <div class="subheading">Subheading</div>
         <div
-          class="body-text-for-whatever-you-d-like-to-claim-add-main-takeaway-points-quotes-anecdotes-or-even-a-very-very-short-story"
-        >
+          class="body-text-for-whatever-you-d-like-to-claim-add-main-takeaway-points-quotes-anecdotes-or-even-a-very-very-short-story">
           Body text for whatever you’d like to claim. Add main takeaway points,
           quotes, anecdotes, or even a very very short story.
         </div>
@@ -168,24 +152,22 @@
     <div class="list2">
       <div class="copy6">
         <div class="_00">
-          <img class="icon-avatar" src="icon-avatar0.svg" />
+          <img class="icon-avatar" src="./Media/icon-avatar0.svg" />
         </div>
         <div class="subheading">Subheading</div>
         <div
-          class="body-text-for-whatever-you-d-like-to-suggest-add-main-takeaway-points-quotes-anecdotes-or-even-a-very-very-short-story"
-        >
+          class="body-text-for-whatever-you-d-like-to-suggest-add-main-takeaway-points-quotes-anecdotes-or-even-a-very-very-short-story">
           Body text for whatever you’d like to suggest. Add main takeaway points,
           quotes, anecdotes, or even a very very short story.
         </div>
       </div>
       <div class="copy6">
         <div class="_00">
-          <img class="icon-calendar" src="icon-calendar0.svg" />
+          <img class="icon-calendar" src="./Media/icon-calendar0.svg" />
         </div>
         <div class="subheading">Subheading</div>
         <div
-          class="body-text-for-whatever-you-d-like-to-type-add-main-takeaway-points-quotes-anecdotes-or-even-a-very-very-short-story"
-        >
+          class="body-text-for-whatever-you-d-like-to-type-add-main-takeaway-points-quotes-anecdotes-or-even-a-very-very-short-story">
           Body text for whatever you’d like to type. Add main takeaway points,
           quotes, anecdotes, or even a very very short story.
         </div>
@@ -210,16 +192,16 @@
       </div>
       <div class="social-icons">
         <div class="buttons-icon">
-          <img class="icon" src="icon0.svg" />
+          <img class="icon" src="./Media/icon0.svg" />
         </div>
         <div class="buttons-icon">
-          <img class="icon2" src="icon1.svg" />
+          <img class="icon2" src="./Media/icon1.svg" />
         </div>
         <div class="buttons-icon">
-          <img class="icon3" src="icon2.svg" />
+          <img class="icon3" src="./Media/icon2.svg" />
         </div>
         <div class="buttons-icon">
-          <img class="icon4" src="icon3.svg" />
+          <img class="icon4" src="./Media/icon3.svg" />
         </div>
       </div>
       <div class="divider"></div>
@@ -241,20 +223,20 @@
         </div>
         <div class="social-icons">
           <div class="buttons-icon">
-            <img class="icon5" src="icon4.svg" />
+            <img class="icon5" src="./Media/icon4.svg" />
           </div>
           <div class="buttons-icon">
-            <img class="icon6" src="icon5.svg" />
+            <img class="icon6" src="./Media/icon5.svg" />
           </div>
           <div class="buttons-icon">
-            <img class="icon7" src="icon6.svg" />
+            <img class="icon7" src="./Media/icon6.svg" />
           </div>
           <div class="buttons-icon">
-            <img class="icon8" src="icon7.svg" />
+            <img class="icon8" src="./Media/icon7.svg" />
           </div>
         </div>
         <div class="divider"></div>
-        <img class="logo" src="logo0.png" />
+        <img class="logo" src="./Media/logo0.png" />
       </div>
     </div>
     <div class="article-title">
@@ -265,24 +247,22 @@
         </span>
       </div>
       <div
-        class="for-immediate-suicide-crisis-support-you-re-not-alone-help-is-available"
-      >
+        class="for-immediate-suicide-crisis-support-you-re-not-alone-help-is-available">
         <span>
           <span
-            class="for-immediate-suicide-crisis-support-you-re-not-alone-help-is-available-span"
-          >
+            class="for-immediate-suicide-crisis-support-you-re-not-alone-help-is-available-span">
             For immediate suicide &amp; crisis support
           </span>
           <span
-            class="for-immediate-suicide-crisis-support-you-re-not-alone-help-is-available-span2"
-          >
+            class="for-immediate-suicide-crisis-support-you-re-not-alone-help-is-available-span2">
             . You&#039;re not alone—help is available.
           </span>
         </span>
       </div>
     </div>
-    <img class="frame-1321316144" src="frame-13213161440.png" />
+    <img class="frame-1321316144" src="./Media/frame-13213161440.png" />
   </div>
-  
+
 </body>
+
 </html>

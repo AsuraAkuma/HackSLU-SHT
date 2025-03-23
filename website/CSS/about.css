@@ -1,13 +1,17 @@
+:root {}
+
 .about,
 .about * {
   box-sizing: border-box;
 }
+
 .about {
   background: #ffffff;
   height: 4329px;
   position: relative;
   overflow: hidden;
 }
+
 .image {
   border-radius: 8px;
   width: 508px;
@@ -18,6 +22,7 @@
   overflow: hidden;
   object-fit: cover;
 }
+
 .image2 {
   border-radius: 8px;
   width: 508px;
@@ -28,6 +33,7 @@
   overflow: hidden;
   object-fit: cover;
 }
+
 .image3 {
   border-radius: 8px;
   width: 508px;
@@ -38,6 +44,7 @@
   overflow: hidden;
   object-fit: cover;
 }
+
 .image4 {
   border-radius: 8px;
   width: 508px;
@@ -48,6 +55,7 @@
   overflow: hidden;
   object-fit: cover;
 }
+
 .copy {
   display: flex;
   flex-direction: column;
@@ -59,6 +67,7 @@
   left: 731px;
   top: 2720px;
 }
+
 .patrick-suarez {
   color: #000000;
   text-align: left;
@@ -69,6 +78,7 @@
   position: relative;
   align-self: stretch;
 }
+
 .frontend-interface-engineering-lead {
   color: #414141;
   text-align: left;
@@ -82,6 +92,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .copy2 {
   display: flex;
   flex-direction: column;
@@ -93,6 +104,7 @@
   left: 150px;
   top: 1972px;
 }
+
 .justin-zhang {
   color: #000000;
   text-align: right;
@@ -103,6 +115,7 @@
   position: relative;
   align-self: stretch;
 }
+
 .digital-infrastructure-engineering-lead {
   color: #414141;
   text-align: right;
@@ -116,6 +129,7 @@
   align-items: center;
   justify-content: flex-end;
 }
+
 .copy3 {
   display: flex;
   flex-direction: column;
@@ -127,6 +141,7 @@
   left: 731px;
   top: 1228px;
 }
+
 .henry-wang {
   color: #000000;
   text-align: left;
@@ -137,6 +152,7 @@
   position: relative;
   align-self: stretch;
 }
+
 .conversational-ai-engineering-lead {
   color: #414141;
   text-align: left;
@@ -150,6 +166,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .copy4 {
   display: flex;
   flex-direction: column;
@@ -161,6 +178,7 @@
   left: 150px;
   top: 454px;
 }
+
 .adam-gardener {
   color: #000000;
   text-align: right;
@@ -171,6 +189,7 @@
   position: relative;
   align-self: stretch;
 }
+
 .head-of-backend-development {
   color: #414141;
   text-align: right;
@@ -184,6 +203,7 @@
   align-items: center;
   justify-content: flex-end;
 }
+
 .copy5 {
   display: flex;
   flex-direction: column;
@@ -195,6 +215,7 @@
   left: 80px;
   top: 244px;
 }
+
 .about-us {
   color: #000000;
   text-align: left;
@@ -205,6 +226,7 @@
   position: relative;
   align-self: stretch;
 }
+
 .meet-our-team-of-developers-and-designers {
   color: #000000;
   text-align: left;
@@ -218,6 +240,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .navigation {
   background: #ffffff;
   height: 164px;
@@ -227,6 +250,7 @@
   top: 0px;
   overflow: hidden;
 }
+
 .items {
   display: flex;
   flex-direction: row;
@@ -237,6 +261,7 @@
   right: 80px;
   top: 56px;
 }
+
 .page {
   color: #000000;
   text-align: left;
@@ -249,6 +274,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .button {
   background: #000000;
   border-radius: 8px;
@@ -261,15 +287,17 @@
   flex-shrink: 0;
   position: relative;
   transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
-  box-shadow: var(
-    --button-shadow-box-shadow,
-    0px 1px 2px 0px rgba(0, 0, 0, 0.05)
-  );
+  box-shadow: var(--button-shadow-box-shadow,
+      0px 1px 2px 0px rgba(0, 0, 0, 0.05));
 }
+
 .button:hover {
-  transform: scale(1.1); /* Slightly enlarges the button */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle hover shadow */
+  transform: scale(1.1);
+  /* Slightly enlarges the button */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  /* Adds a subtle hover shadow */
 }
+
 .button2 {
   color: #ffffff;
   text-align: left;
@@ -282,6 +310,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .site-name {
   color: #000000;
   text-align: left;
@@ -296,6 +325,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .resources {
   color: #000000;
   text-align: left;
@@ -308,6 +338,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .professionals {
   color: #000000;
   text-align: left;
@@ -320,6 +351,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .about2 {
   color: #000000;
   text-align: left;
@@ -332,6 +364,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .chat {
   color: #ffffff;
   text-align: left;
@@ -344,6 +377,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .sht-online-consulting-and-therapy {
   color: #000000;
   text-align: left;
@@ -358,6 +392,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .navigation-footer {
   background: #ffffff;
   height: 264px;
@@ -367,6 +402,7 @@
   bottom: 0px;
   overflow: hidden;
 }
+
 .items2 {
   display: flex;
   flex-direction: column;
@@ -378,6 +414,7 @@
   right: 517px;
   top: 48px;
 }
+
 .topic {
   color: #000000;
   text-align: left;
@@ -391,6 +428,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .page2 {
   color: #454545;
   text-align: left;
@@ -404,6 +442,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .items3 {
   display: flex;
   flex-direction: column;
@@ -415,6 +454,7 @@
   right: 298px;
   top: 48px;
 }
+
 .items4 {
   display: flex;
   flex-direction: column;
@@ -426,6 +466,7 @@
   right: 80px;
   top: 48px;
 }
+
 .sht-online-therapy-and-consulting {
   color: #000000;
   text-align: left;
@@ -440,6 +481,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .social-icons {
   display: flex;
   flex-direction: row;
@@ -450,6 +492,7 @@
   left: 80px;
   top: 176px;
 }
+
 .buttons-icon {
   border-radius: 4px;
   padding: 8px;
@@ -458,6 +501,7 @@
   height: 40px;
   position: relative;
 }
+
 .icon {
   width: 24px;
   height: 24px;
@@ -466,6 +510,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon2 {
   width: 24px;
   height: 24px;
@@ -474,6 +519,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon3 {
   width: 24px;
   height: 24px;
@@ -482,6 +528,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon4 {
   width: 24px;
   height: 24px;
@@ -490,6 +537,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .divider {
   margin-top: -1px;
   border-style: solid;
@@ -503,6 +551,7 @@
   transform-origin: 0 0;
   transform: rotate(0deg) scale(1, 1);
 }
+
 .items5 {
   display: flex;
   flex-direction: column;
@@ -514,6 +563,7 @@
   right: 249px;
   top: 48px;
 }
+
 .policies {
   color: #000000;
   text-align: left;
@@ -527,6 +577,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .terms-and-conditions {
   color: #454545;
   text-align: left;
@@ -540,6 +591,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .cookies {
   color: #454545;
   text-align: left;
@@ -553,6 +605,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .privacy {
   color: #454545;
   text-align: left;
@@ -566,6 +619,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .items6 {
   display: flex;
   flex-direction: column;
@@ -577,6 +631,7 @@
   right: 0px;
   top: 48px;
 }
+
 .services {
   color: #000000;
   text-align: left;
@@ -590,6 +645,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .pro-finder {
   color: #454545;
   text-align: left;
@@ -603,6 +659,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .schedule-builder {
   color: #454545;
   text-align: left;
@@ -616,6 +673,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .book-consultation {
   color: #454545;
   text-align: left;
@@ -629,6 +687,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .sht-online-consulting-and-therapy2 {
   color: #000000;
   text-align: left;
@@ -643,6 +702,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .icon5 {
   width: 24px;
   height: 24px;
@@ -651,6 +711,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon6 {
   width: 24px;
   height: 24px;
@@ -659,6 +720,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon7 {
   width: 24px;
   height: 24px;
@@ -667,6 +729,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon8 {
   width: 24px;
   height: 24px;
@@ -675,6 +738,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon9 {
   width: 24px;
   height: 24px;
@@ -683,6 +747,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon10 {
   width: 24px;
   height: 24px;
@@ -691,6 +756,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon11 {
   width: 24px;
   height: 24px;
@@ -699,6 +765,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon12 {
   width: 24px;
   height: 24px;
@@ -707,6 +774,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .logo {
   width: 91px;
   height: 70px;
@@ -716,6 +784,7 @@
   overflow: hidden;
   object-fit: cover;
 }
+
 .form {
   display: flex;
   flex-direction: row;
@@ -731,6 +800,7 @@
   left: 6.53%;
   top: 3516px;
 }
+
 .input {
   display: flex;
   flex-direction: column;
@@ -742,6 +812,7 @@
   height: 80px;
   position: relative;
 }
+
 .first-name {
   color: #000000;
   text-align: left;
@@ -752,6 +823,7 @@
   position: relative;
   align-self: stretch;
 }
+
 .field {
   background: #ffffff;
   border-radius: 8px;
@@ -767,11 +839,10 @@
   align-self: stretch;
   flex: 1;
   position: relative;
-  box-shadow: var(
-    --button-shadow-box-shadow,
-    0px 1px 2px 0px rgba(0, 0, 0, 0.05)
-  );
+  box-shadow: var(--button-shadow-box-shadow,
+      0px 1px 2px 0px rgba(0, 0, 0, 0.05));
 }
+
 .label {
   color: #828282;
   text-align: left;
@@ -782,6 +853,7 @@
   position: relative;
   flex: 1;
 }
+
 .input2 {
   display: flex;
   flex-direction: column;
@@ -793,6 +865,7 @@
   height: 80px;
   position: relative;
 }
+
 .last-name {
   color: #000000;
   text-align: left;
@@ -803,6 +876,7 @@
   position: relative;
   align-self: stretch;
 }
+
 .input3 {
   display: flex;
   flex-direction: column;
@@ -814,6 +888,7 @@
   height: 80px;
   position: relative;
 }
+
 .email-address {
   color: #000000;
   text-align: left;
@@ -824,6 +899,7 @@
   position: relative;
   align-self: stretch;
 }
+
 .input4 {
   display: flex;
   flex-direction: column;
@@ -835,6 +911,7 @@
   height: 194px;
   position: relative;
 }
+
 .your-message {
   color: #000000;
   text-align: left;
@@ -845,6 +922,7 @@
   position: relative;
   align-self: stretch;
 }
+
 .button3 {
   background: #000000;
   border-radius: 8px;
@@ -856,11 +934,10 @@
   justify-content: center;
   flex: 1;
   position: relative;
-  box-shadow: var(
-    --button-shadow-box-shadow,
-    0px 1px 2px 0px rgba(0, 0, 0, 0.05)
-  );
+  box-shadow: var(--button-shadow-box-shadow,
+      0px 1px 2px 0px rgba(0, 0, 0, 0.05));
 }
+
 .submit {
   color: #ffffff;
   text-align: left;
@@ -873,6 +950,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .heading {
   display: flex;
   flex-direction: column;
@@ -884,6 +962,7 @@
   left: 94px;
   top: 3436px;
 }
+
 .contact-us {
   color: #000000;
   text-align: left;

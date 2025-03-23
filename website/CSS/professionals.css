@@ -1,13 +1,17 @@
+:root {}
+
 .professionals,
 .professionals * {
   box-sizing: border-box;
 }
+
 .professionals {
   background: #ffffff;
   height: 2628px;
   position: relative;
   overflow: hidden;
 }
+
 .article-title {
   display: flex;
   flex-direction: column;
@@ -20,6 +24,7 @@
   left: 5.56%;
   top: 244px;
 }
+
 .our-team {
   color: #000000;
   text-align: left;
@@ -30,6 +35,7 @@
   position: relative;
   align-self: stretch;
 }
+
 .meet-our-lovely-team-of-psychologists-and-therapists-that-are-here-to-lend-you-an-ear-and-powerful-insights {
   color: rgba(0, 0, 0, 0.75);
   text-align: left;
@@ -43,6 +49,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .navigation {
   background: #ffffff;
   height: 164px;
@@ -52,6 +59,7 @@
   top: 0px;
   overflow: hidden;
 }
+
 .items {
   display: flex;
   flex-direction: row;
@@ -62,6 +70,7 @@
   right: 80px;
   top: 56px;
 }
+
 .page {
   color: #000000;
   text-align: left;
@@ -74,6 +83,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .button {
   background: #000000;
   border-radius: 8px;
@@ -86,15 +96,17 @@
   flex-shrink: 0;
   position: relative;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  box-shadow: var(
-    --button-shadow-box-shadow,
-    0px 1px 2px 0px rgba(0, 0, 0, 0.05)
-  );
+  box-shadow: var(--button-shadow-box-shadow,
+      0px 1px 2px 0px rgba(0, 0, 0, 0.05));
 }
+
 .button:hover {
-  transform: scale(1.1); /* Slightly enlarges the button */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle hover shadow */
+  transform: scale(1.1);
+  /* Slightly enlarges the button */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  /* Adds a subtle hover shadow */
 }
+
 .button2 {
   color: #ffffff;
   text-align: left;
@@ -107,6 +119,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .site-name {
   color: #000000;
   text-align: left;
@@ -121,6 +134,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .resources {
   color: #000000;
   text-align: left;
@@ -133,6 +147,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .professionals2 {
   color: #000000;
   text-align: left;
@@ -145,6 +160,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .about {
   color: #000000;
   text-align: left;
@@ -157,6 +173,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .chat {
   color: #ffffff;
   text-align: left;
@@ -169,6 +186,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .sht-online-consulting-and-therapy {
   color: #000000;
   text-align: left;
@@ -183,6 +201,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .navigation-footer {
   background: #ffffff;
   height: 264px;
@@ -192,6 +211,7 @@
   bottom: -1500px;
   overflow: hidden;
 }
+
 .items2 {
   display: flex;
   flex-direction: column;
@@ -203,6 +223,7 @@
   right: 249px;
   top: 48px;
 }
+
 .policies {
   color: #000000;
   text-align: left;
@@ -216,6 +237,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .terms-and-conditions {
   color: #454545;
   text-align: left;
@@ -229,6 +251,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .cookies {
   color: #454545;
   text-align: left;
@@ -242,6 +265,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .privacy {
   color: #454545;
   text-align: left;
@@ -255,6 +279,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .items3 {
   display: flex;
   flex-direction: column;
@@ -266,6 +291,7 @@
   right: 0px;
   top: 48px;
 }
+
 .services {
   color: #000000;
   text-align: left;
@@ -279,6 +305,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .pro-finder {
   color: #454545;
   text-align: left;
@@ -292,6 +319,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .schedule-builder {
   color: #454545;
   text-align: left;
@@ -305,6 +333,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .book-consultation {
   color: #454545;
   text-align: left;
@@ -318,6 +347,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .sht-online-consulting-and-therapy2 {
   color: #000000;
   text-align: left;
@@ -332,6 +362,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .social-icons {
   display: flex;
   flex-direction: row;
@@ -342,6 +373,7 @@
   left: 80px;
   top: 176px;
 }
+
 .buttons-icon {
   border-radius: 4px;
   padding: 8px;
@@ -350,6 +382,7 @@
   height: 40px;
   position: relative;
 }
+
 .icon {
   width: 24px;
   height: 24px;
@@ -358,6 +391,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon2 {
   width: 24px;
   height: 24px;
@@ -366,6 +400,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon3 {
   width: 24px;
   height: 24px;
@@ -374,6 +409,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon4 {
   width: 24px;
   height: 24px;
@@ -382,6 +418,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .divider {
   margin-top: -1px;
   border-style: solid;
@@ -395,6 +432,7 @@
   transform-origin: 0 0;
   transform: rotate(0deg) scale(1, 1);
 }
+
 .navigation-footer2 {
   background: #ffffff;
   height: 264px;
@@ -404,6 +442,7 @@
   bottom: 0px;
   overflow: hidden;
 }
+
 .icon5 {
   width: 24px;
   height: 24px;
@@ -412,6 +451,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon6 {
   width: 24px;
   height: 24px;
@@ -420,6 +460,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon7 {
   width: 24px;
   height: 24px;
@@ -428,6 +469,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .icon8 {
   width: 24px;
   height: 24px;
@@ -436,6 +478,7 @@
   top: 8px;
   overflow: visible;
 }
+
 .logo {
   width: 91px;
   height: 70px;
@@ -445,6 +488,7 @@
   overflow: hidden;
   object-fit: cover;
 }
+
 .frame-1321316142 {
   display: flex;
   flex-direction: column;
@@ -456,12 +500,14 @@
   left: 76px;
   top: 529px;
 }
+
 .pro-user {
   flex-shrink: 0;
   width: 1235px;
   height: 500px;
   position: static;
 }
+
 .image-bacground {
   background: #828282;
   border-radius: 8px;
@@ -471,6 +517,7 @@
   left: 0px;
   top: 0px;
 }
+
 .name {
   color: #ffffff;
   text-align: center;
@@ -487,6 +534,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .image {
   border-radius: 8px;
   width: 500px;
@@ -496,6 +544,7 @@
   top: 0px;
   object-fit: cover;
 }
+
 .profession {
   color: #000000;
   text-align: left;
@@ -512,6 +561,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .description {
   color: rgba(0, 0, 0, 0.75);
   text-align: left;
@@ -525,11 +575,13 @@
   width: 705px;
   height: 414px;
 }
+
 .image2 {
   width: 500px;
   height: 500px;
   position: static;
 }
+
 .image-bacground2 {
   background: #828282;
   border-radius: 8px;
@@ -539,6 +591,7 @@
   left: 735px;
   top: 560px;
 }
+
 .name2 {
   color: #ffffff;
   text-align: center;
@@ -555,6 +608,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .image3 {
   border-radius: 8px;
   width: 500px;
@@ -564,11 +618,13 @@
   top: 560px;
   object-fit: cover;
 }
+
 .text {
   width: 705px;
   height: 500px;
   position: static;
 }
+
 .profession2 {
   color: #000000;
   text-align: left;
@@ -585,6 +641,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .description2 {
   color: rgba(0, 0, 0, 0.75);
   text-align: left;
@@ -598,6 +655,7 @@
   width: 705px;
   height: 414px;
 }
+
 .image-bacground3 {
   background: #828282;
   border-radius: 8px;
@@ -607,6 +665,7 @@
   left: 0px;
   top: 1120px;
 }
+
 .name3 {
   color: #ffffff;
   text-align: center;
@@ -623,6 +682,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .image4 {
   border-radius: 8px;
   width: 500px;
@@ -632,6 +692,7 @@
   top: 1120px;
   object-fit: cover;
 }
+
 .profession3 {
   color: #000000;
   text-align: left;
@@ -648,6 +709,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .description3 {
   color: rgba(0, 0, 0, 0.75);
   text-align: left;
@@ -661,6 +723,7 @@
   width: 705px;
   height: 414px;
 }
+
 .button3 {
   background: #e6e6e6;
   border-radius: 8px;
@@ -673,11 +736,10 @@
   position: absolute;
   left: 621px;
   top: 2209px;
-  box-shadow: var(
-    --button-shadow-box-shadow,
-    0px 1px 2px 0px rgba(0, 0, 0, 0.05)
-  );
+  box-shadow: var(--button-shadow-box-shadow,
+      0px 1px 2px 0px rgba(0, 0, 0, 0.05));
 }
+
 .view-more {
   color: #000000;
   text-align: left;
