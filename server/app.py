@@ -49,11 +49,13 @@ def ping():
 def signup():
     data = request.get_json()
 
-    if not data or 'username' not in data or 'password' not in data:
-        return jsonify({"error": "Username and password are required"}), 400
+    # Ensure username, password, and email are provided
+    if not data or 'username' not in data or 'password' not in data or 'email' not in data:
+        return jsonify({"error": "Username, password, and email are required"}), 400
     
     username = data['username']
     password = data['password']
+    email = data['email']
     
     # Hash the password before saving it
     hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
@@ -69,9 +71,18 @@ def signup():
         cursor.close()
         conn.close()
         return jsonify({"error": "Username already exists"}), 400
+    
+    # Check if the email already exists
+    cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+    user_by_email = cursor.fetchone()
+
+    if user_by_email:
+        cursor.close()
+        conn.close()
+        return jsonify({"error": "Email already exists"}), 400
 
     # Insert the user into the database
-    cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, hashed_password))
+    cursor.execute("INSERT INTO users (username, password, email) VALUES (%s, %s, %s)", (username, hashed_password, email))
     conn.commit()
 
     user_id = cursor.lastrowid  # Get the newly created user's ID
@@ -79,6 +90,7 @@ def signup():
     conn.close()
 
     return jsonify({"message": "User created successfully", "user_id": user_id}), 201
+
 # Login endpoint
 @app.route('/api/login', methods=['POST'])
 def login():
@@ -101,6 +113,7 @@ def login():
         user_id = user['user_id']
         cursor.close()
         conn.close()
+        print("Hashed password from the database:", user['password'])
         return jsonify({"message": "Login successful", "user_id": user_id}), 200
 
     cursor.close()
@@ -143,13 +156,13 @@ def get_professionals():
         return jsonify({"error": "No professionals found"}), 404  # Not Found
 
 
-@app.route('/api/appointments/<int:userid>/<int:appt_id>', methods=['GET'])
-def get_appointments(userid, appt_id):
+@app.route('/api/appointments/<int:user_id>/<int:appt_id>', methods=['GET'])
+def get_appointments(user_id, appt_id):
     conn = getConnection()  # Use the correct connection function
     cursor = conn.cursor(dictionary=True)
 
     query = "SELECT * FROM appointments WHERE user_id = %s AND appt_id = %s"
-    cursor.execute(query, (userid, appt_id))
+    cursor.execute(query, (user_id, appt_id))
 
     appointment = cursor.fetchone()  # Fetch one appointment
 
@@ -157,12 +170,19 @@ def get_appointments(userid, appt_id):
     conn.close()
 
     if appointment:
-        return jsonify(appointment), 200
+        return jsonify({
+            "appointment_id": appointment["appt_id"],
+            "user_id": appointment["user_id"],
+            "date": appointment["date"],
+            "time": appointment["time"],
+            "created_at": appointment["created_at"],
+            "description": appointment["description"]
+        }), 200
     else:
         return jsonify({"error": "Appointment not found"}), 404
 
-@app.route('/api/appointments/<int:userid>', methods=['POST'])
-def create_appointments(userid):
+@app.route('/api/appointments/<int:user_id>', methods=['POST'])
+def create_appointments(user_id):
     data = request.get_json()
 
     if not data or "date" not in data or "time" not in data or "description" not in data:
@@ -175,26 +195,39 @@ def create_appointments(userid):
         cursor.execute("""
             INSERT INTO appointments (user_id, date, time, description)
             VALUES (%s, %s, %s, %s)
-        """, (userid, data["date"], data["time"], data["description"]))
+        """, (user_id, data["date"], data["time"], data["description"]))
 
         conn.commit()  # Save changes
         appt_id = cursor.lastrowid  # Get the inserted appointment ID
+        
+        # Fetch the newly created appointment to return all details
+        cursor.execute("SELECT * FROM appointments WHERE appt_id = %s", (appt_id,))
+        new_appointment = cursor.fetchone()
+
         conn.close()
 
-        return jsonify({"message": "Appointment created", "appointment_id": appt_id}), 201  # Created
+        return jsonify({
+            "message": "Appointment created",
+            "appointment_id": new_appointment["appt_id"],
+            "user_id": new_appointment["user_id"],
+            "date": new_appointment["date"],
+            "time": new_appointment["time"],
+            "created_at": new_appointment["created_at"],
+            "description": new_appointment["description"]
+        }), 201  # Created
     except Exception as e:
         conn.rollback()  # Undo changes if an error occurs
         conn.close()
         return jsonify({"error": str(e)}), 500  # Internal Server Error
 
-@app.route('/api/appointments/<int:userid>/<int:appt_id>', methods=['DELETE'])
-def delete_appointments(userid, appt_id):
+@app.route('/api/appointments/<int:user_id>/<int:appt_id>', methods=['DELETE'])
+def delete_appointments(user_id, appt_id):
     conn = getConnection()  # Use the correct connection function
     cursor = conn.cursor()
 
     try:
         # Check if the appointment exists for the given user
-        cursor.execute("SELECT * FROM appointments WHERE appt_id = %s AND user_id = %s", (appt_id, userid))
+        cursor.execute("SELECT * FROM appointments WHERE appt_id = %s AND user_id = %s", (appt_id, user_id))
         appointment = cursor.fetchone()
 
         if not appointment:
@@ -202,11 +235,19 @@ def delete_appointments(userid, appt_id):
             return jsonify({"error": "Appointment not found"}), 404  # Not Found
 
         # Delete the appointment
-        cursor.execute("DELETE FROM appointments WHERE appt_id = %s AND user_id = %s", (appt_id, userid))
+        cursor.execute("DELETE FROM appointments WHERE appt_id = %s AND user_id = %s", (appt_id, user_id))
         conn.commit()
         conn.close()
 
-        return jsonify({"message": "Appointment deleted"}), 200  # Success
+        return jsonify({
+            "message": "Appointment deleted",
+            "appointment_id": appointment["appt_id"],
+            "user_id": appointment["user_id"],
+            "date": appointment["date"],
+            "time": appointment["time"],
+            "created_at": appointment["created_at"],
+            "description": appointment["description"]
+        }), 200  # Success
     except Exception as e:
         conn.rollback()  # Undo changes if an error occurs
         conn.close()

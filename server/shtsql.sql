@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `help_resources` (
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table sht.help_resources: ~0 rows (approximately)
-REPLACE INTO `help_resources` (`resourceId`, `issue_name`, `resource_type`, `resource_info`, `description`) VALUES
+INSERT IGNORE INTO `help_resources` (`resourceId`, `issue_name`, `resource_type`, `resource_info`, `description`) VALUES
 	(1, 'Anxiety', 1, '1-800-555-ANXIETY', 'National Anxiety Helpline, available 24/7'),
 	(2, 'Anxiety', 2, 'anxiety@helpline.com', 'Email support for anxiety-related concerns'),
 	(3, 'Anxiety', 3, 'http://www.anxietyrelief.com', 'A website offering resources, exercises, and articles to relieve anxiety'),
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `professionals` (
 ) ENGINE=InnoDB AUTO_INCREMENT=182 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table sht.professionals: ~0 rows (approximately)
-REPLACE INTO `professionals` (`professionalId`, `name`, `location`, `availability`, `phone`, `email`, `website`, `profession`, `description`) VALUES
+INSERT IGNORE INTO `professionals` (`professionalId`, `name`, `location`, `availability`, `phone`, `email`, `website`, `profession`, `description`) VALUES
 	(131, 'Dr. Alice Smith', 'Couch, USA', 'Mon-Sun 12:00AM-11:59PM', '(123) 456-7890', 'alice.smith@procrastinate.com', 'www.dralicesmithbinges.com', 2, 'Dr. Smith helps clients embrace the beauty of \'just one more episode\' while navigating the delicate balance of snacks and naps.'),
 	(132, 'Dr. John Doe', 'Inbox, USA', 'Mon-Fri 09:00AM-05:00PM', '(234) 567-8901', 'john.doe@inboxpanic.com', 'www.drjohndoeavoids.com', 2, 'Dr. Doe specializes in minimizing the existential dread of unread emails and teaching the fine art of the polite ghost.'),
 	(133, 'Dr. Emily Johnson', 'Mind Palace, USA', 'Mon-Fri 10:00PM-02:00AM', '(345) 678-9012', 'emily.johnson@whatif.com', 'www.dremilyjohnsonspirals.com', 2, 'Dr. Johnson guides clients through endless hypothetical scenarios with a compassionate eye roll and a cup of herbal tea.'),
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `professions` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table sht.professions: ~0 rows (approximately)
-REPLACE INTO `professions` (`professionId`, `name`) VALUES
+INSERT IGNORE INTO `professions` (`professionId`, `name`) VALUES
 	(1, 'Psychologist'),
 	(2, 'Therapist'),
 	(3, 'Psychiatrist'),
@@ -139,11 +139,62 @@ CREATE TABLE IF NOT EXISTS `resourcetypes` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dumping data for table sht.resourcetypes: ~0 rows (approximately)
-REPLACE INTO `resourcetypes` (`typeId`, `name`) VALUES
+INSERT IGNORE INTO `resourcetypes` (`typeId`, `name`) VALUES
 	(1, 'Hotline'),
 	(2, 'Email'),
 	(3, 'Website'),
 	(4, 'Support Group');
+
+-- Dumping structure for table sht.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL UNIQUE,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL UNIQUE,
+  `password` text COLLATE utf8mb4_general_ci NOT NULL,
+  `userType` tinyint NOT NULL DEFAULT (1),
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table sht.users: ~0 rows (approximately)
+INSERT INTO `users` (`username`, `email`, `password`) VALUES
+('john_doe', 'john@example.com', '$2b$12$abcdefghijABCDEFGHIJ1234567890ABC'),
+('dr_smith', 'smith@example.com', '$2b$12$1234567890abcdefghijABCDEFGHIJABC'),
+('agent_kate', 'kate@example.com', '$2b$12$abcdef1234567890ABCDEFGHijklmnop');
+
+-- Dumping structure for table sht.usertypes
+CREATE TABLE IF NOT EXISTS `usertypes` (
+  `typeId` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`typeId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table sht.usertypes: ~0 rows (approximately)
+INSERT IGNORE INTO `usertypes` (`typeId`, `name`) VALUES
+	(1, 'patient'),
+	(2, 'professional'),
+	(3, 'agent');
+
+-- Dumping structure for table sht.appointments
+CREATE TABLE IF NOT EXISTS `appointments` (
+  `appt_id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `date` DATE NOT NULL,
+  `time` TIME NOT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+  `description` TEXT NOT NULL,
+  PRIMARY KEY (`appt_id`),
+  FOREIGN KEY (`user_id`) REFERENCES `users` (`user_Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dumping data for table sht.appointments: ~0 rows (approximately)
+INSERT INTO `appointments` (user_id, date, time, description) 
+VALUES 
+    (1, '2025-04-01', '10:00:00', 'Initial therapy consultation'),
+    (2, '2025-04-02', '11:30:00', 'Follow-up session with psychologist'),
+    (3, '2025-04-03', '14:00:00', 'Cognitive Behavioral Therapy session'),
+    (1, '2025-04-05', '16:00:00', 'Group therapy session'),
+    (2, '2025-04-06', '09:30:00', 'Mental health assessment');
+
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
