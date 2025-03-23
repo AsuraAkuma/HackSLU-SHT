@@ -16,11 +16,6 @@
   }
 }
 
-/* animation appear lines
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-*/
 
 .about {
   background: #ffffff;
@@ -39,9 +34,7 @@
   overflow: hidden;
   object-fit: cover;
 
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+
 }
 
 .image2 {
@@ -54,9 +47,7 @@
   overflow: hidden;
   object-fit: cover;
 
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+
 }
 
 .image3 {
@@ -69,9 +60,7 @@
   overflow: hidden;
   object-fit: cover;
 
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+
 }
 
 .image4 {
@@ -84,9 +73,7 @@
   overflow: hidden;
   object-fit: cover;
 
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+
 }
 
 .copy {
@@ -100,9 +87,7 @@
   left: 731px;
   top: 2720px;
 
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
+
 }
 
 .patrick-suarez {
@@ -141,9 +126,6 @@
   left: 150px;
   top: 1972px;
 
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .justin-zhang {
@@ -182,9 +164,6 @@
   left: 731px;
   top: 1228px;
 
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .henry-wang {
@@ -223,9 +202,6 @@
   left: 150px;
   top: 454px;
 
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .adam-gardener {

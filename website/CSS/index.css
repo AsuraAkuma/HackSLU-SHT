@@ -1,15 +1,6 @@
 :root {}
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    scale: 0.5;
-  }
-  to {
-    opacity: 1;
-    scale: 1;
-  }
-}
+
 
 .static-landing-page,
 .static-landing-page * {
@@ -46,10 +37,6 @@
   position: relative;
   left: 80px;
   top: 3728px;
-
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .customer-quote {
@@ -586,10 +573,6 @@
   left: 80px;
   top: 1910px;
   width: 624px;
-
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .text {
@@ -602,10 +585,6 @@
   position: absolute;
   left: 81px;
   top: 2000px;
-
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .text2 {
@@ -704,10 +683,6 @@
   position: absolute;
   left: 81px;
   top: 2584px;
-
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .button2 {
@@ -760,9 +735,6 @@
   translate: -50%;
   top: 3435px;
 
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .button3 {
@@ -814,9 +786,6 @@
   top: 4076px;
   overflow: hidden;
 
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .buttons3 {
@@ -945,10 +914,6 @@
   position: absolute;
   left: 81px;
   top: 2846px;
-
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .image2 {
@@ -1007,10 +972,6 @@
   position: absolute;
   left: 518px;
   top: 2846px;
-
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .dr-erik-sinson-ph-d {
@@ -1048,10 +1009,6 @@
   position: absolute;
   left: 955px;
   top: 2846px;
-
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
 }
 
 .dr-karen-horneyed-md {

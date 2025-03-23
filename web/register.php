@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+    // extra comment
     // API URL (Flask backend)
     $api_url = "http://127.0.0.1:5504/api/signup";
 
