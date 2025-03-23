@@ -30,11 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usr']) && isset($_POS
     $loginUsername = getValue('usr');
     $loginPassword = getValue('pwd');
 
-    if ($loginUsername == 'admin' && $loginPassword == 'admin') {
-        $_SESSION['usr'] = $loginUsername;
-        header('Location: test.php');
-        die;
-    }
 
     $conn = getConnection();
     $stmt = $conn->prepare("SELECT username, password FROM users WHERE username = ?");
@@ -49,10 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usr']) && isset($_POS
         $conn->close();
         if (password_verify($loginPassword, $dbPassword)) {
             $_SESSION['usr'] = $loginUsername;
-            header('Location: test.php');
+            header('Location: scheduler.php');
             exit;
         } else {
-            die("Unable to authenticate.");
+            header('Location: login.php');
         }
     } else {
         $conn->close();

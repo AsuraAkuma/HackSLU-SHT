@@ -1,4 +1,4 @@
-import config from '../../web/JS/config.json' with {type: "json"};
+import config from './config.json' with {type: "json"};
 
 window.addEventListener('load', function () {
 
