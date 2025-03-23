@@ -69,30 +69,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             const registerForm = document.getElementById("registerForm");
             const registerError = document.getElementById("register-error");
 
-            registerForm.addEventListener("submit", async function (event) {
-                event.preventDefault();
-                registerError.innerHTML = "";
-
-                const formData = new FormData(registerForm);
-                
-                const response = await fetch("register.php", {
-                    method: "POST",
-                    body: formData
-                });
-
-                const result = await response.json();
-                if (result.error) {
-                    registerError.innerHTML = result.error;
-                } else {
-                    window.location.href = "login.php";
-                }
+            registerForm.addEventListener("submit", function () {
+                registerError.innerHTML = ""; // Clear any previous errors
+                // Allow the form to submit normally
+                window.location.href = "register.php";
             });
         });
     </script>
 </head>
 
 <body>
-    <div class="register-container">
+    <div class="register-container"></div>
         <h1>Register</h1>
         <form id="registerForm" method="POST">
             <label for="username">Username:</label>
