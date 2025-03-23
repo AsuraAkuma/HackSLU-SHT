@@ -64,44 +64,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="./CSS/login.css">
-<<<<<<< HEAD
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const registerForm = document.getElementById("registerForm");
-            const registerError = document.getElementById("register-error");
-
-            registerForm.addEventListener("submit", function () {
-                registerError.innerHTML = ""; // Clear any previous errors
-                // Allow the form to submit normally
-                window.location.href = "register.php";
-            });
-        });
-    </script>
-=======
     <script src="./JS/register.js" type="module"></script>
->>>>>>> eb4b29187a9cefd2e1dcfba49fe75e019da24c21
 </head>
 
 <body>
     <div class="register-container"></div>
-        <h1>Register</h1>
-        <form id="registerForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+    <h1>Register</h1>
+    <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
 
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
 
-            <p id="register-error" style="color: red;"></p>
+        <p id="register-error" style="color: red;"></p>
 
-            <button type="submit" id="register-button">Register</button>
-        </form>
+        <button type="submit" id="register-button">Register</button>
+    </form>
     </div>
 </body>
 

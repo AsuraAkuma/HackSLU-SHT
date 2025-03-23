@@ -1,80 +1,76 @@
 <?php
-    // Turn on error reporting.
-    error_reporting(E_ALL);
-    ini_set('display_errors', '1');
-    
-    session_start();
+// Turn on error reporting.
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
-    function getValue($key) {
-        return isset($_POST[$key]) ? htmlspecialchars(trim($_POST[$key])) : '';
+session_start();
+
+function getValue($key)
+{
+    return isset($_POST[$key]) ? htmlspecialchars(trim($_POST[$key])) : '';
+}
+
+function getConnection()
+{
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $dbname = "sht";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
 
-    function getConnection() {
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
-        $dbname = "sht";
+    return $conn;
+}
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usr']) && isset($_POST['pwd'])) {
+    $loginUsername = getValue('usr');
+    $loginPassword = getValue('pwd');
 
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        return $conn;
+    if ($loginUsername == 'admin' && $loginPassword == 'admin') {
+        $_SESSION['usr'] = $loginUsername;
+        header('Location: test.php');
+        die;
     }
-    
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['usr']) && isset($_POST['pwd'])) {
-        $loginUsername = getValue('usr');
-        $loginPassword = getValue('pwd');
 
-        if ($loginUsername == 'admin' && $loginPassword == 'admin') {
-            $_SESSION['usr'] = $loginUsername;
-            header('Location: test.php');
-            die;
-        }
+    $conn = getConnection();
+    $stmt = $conn->prepare("SELECT username, password FROM users WHERE username = ?");
+    $stmt->bind_param("s", $loginUsername);
+    $stmt->execute();
+    $stmt->store_result();
 
-        $conn = getConnection();
-        $stmt = $conn->prepare("SELECT username, password FROM users WHERE username = ?");
-        $stmt->bind_param("s", $loginUsername);
-        $stmt->execute();
-        $stmt->store_result();
-        
-        if ($stmt->num_rows > 0) {
-            $stmt->bind_result($dbUsername, $dbPassword);
-            $stmt->fetch();
-
-            if (password_verify($loginPassword, $dbPassword)) {
-                $_SESSION['usr'] = $loginUsername;
-                header('Location: test.php');
-                exit;
-            } else {
-                die("Unable to authenticate.");
-            }
-        } else {
-            die("Sorry, could not verify account.");
-        }
-
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($dbUsername, $dbPassword);
+        $stmt->fetch();
         $stmt->close();
         $conn->close();
+        if (password_verify($loginPassword, $dbPassword)) {
+            $_SESSION['usr'] = $loginUsername;
+            header('Location: test.php');
+            exit;
+        } else {
+            die("Unable to authenticate.");
+        }
+    } else {
+        $conn->close();
+        die("Sorry, could not verify account.");
     }
+}
 ?>
 
 <!DOCTYPE html>
 <html class="body w3-dark-gray">
+
 <head>
     <title>Login</title>
-<<<<<<< HEAD
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
-    <link rel="stylesheet" href="style1.css"> 
-=======
     <link rel="stylesheet" href="./CSS/login.css">
     <script src="./JS/login.js" type="module"></script>
->>>>>>> eb4b29187a9cefd2e1dcfba49fe75e019da24c21
 </head>
+
 <body>
-<<<<<<< HEAD
     <main class="w3-panel w3-cell-row">
         <div class="w3-cell" style="width: 30%"></div>
         <div class="w3-cell w3-card-4 w3-border w3-round-large" style="width: 40%">
@@ -97,7 +93,7 @@
         </div>
         <div class="w3-cell" style="width: 30%"></div>
     </main>
-    
+
     <script>
         // Removed the event listener for the "Create an account?" link
         document.getElementById('register-button').addEventListener('click', async function(event) {
@@ -109,8 +105,13 @@
             if (email && password) {
                 const req = await fetch('register.php', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password })
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email,
+                        password
+                    })
                 }).catch(error => {
                     registerError.innerHTML = 'Server error';
                 });
@@ -129,19 +130,6 @@
             }
         });
     </script>
-=======
-    <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Login</button>
-        </form>
-    </div>
->>>>>>> eb4b29187a9cefd2e1dcfba49fe75e019da24c21
 </body>
+
 </html>
