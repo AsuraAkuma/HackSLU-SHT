@@ -5,8 +5,8 @@ def getConnection():
     host = 'localhost'
     user = 'root'
     password = 'root'
-    database = 'shtsql'
-    port = 8889
+    database = 'sht'
+    port = 3306
 
     try:
         # Connect to the database
