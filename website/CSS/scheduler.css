@@ -1,0 +1,87 @@
+:root {
+    --green: #10aea3;
+    --navy-blue: #003e65;
+    --baby-blue: #ffcb20;
+    --yellow: #c3e4ed;
+    --white: #fff;
+}
+
+.heading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: min-content;
+    justify-content: center;
+    align-items: center;
+    left: 10%;
+    top: 5%;
+    /* border: 2px solid black; */
+}
+
+.heading-title {
+    position: relative;
+    font-size: 36px;
+    cursor: default;
+}
+
+.heading-text {
+    position: relative;
+    font-size: 20px;
+    cursor: default;
+    margin-top: 2.5%;
+    text-align: center;
+  /* border: 2px solid black; */
+}
+
+.appointment-container {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.appointment-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.dropdown-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dropdown, .date-picker {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.submit-button {
+    background-color: #10aea3;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
