@@ -6,7 +6,7 @@ import bcrypt
 from flask_cors import CORS  # Import CORS
 
 # Replace with your OpenRouter API key
-with open('config.json', 'r') as file:
+with open('C:\Users\Danyu\SHT SluHack 2025\HackSLU-SHT\server\config.json', 'r') as file:
     data = json.load(file)
 
 API_KEY = data["APIKEY"]
