@@ -1,4 +1,32 @@
 <?php
+$config = json_decode(file_get_contents('config.json'), true);
+session_start();
+
+if (isset($_SESSION['id'])) {
+    $isLoggedIn = true;
+} else {
+    $isLoggedIn = false;
+}
+
+function encryptPassword($password)
+{
+    return password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
+}
+
+function apiPost($apiUrl, $postData)
+{
+    $options = [
+        'http' => [
+            'header'  => "Content-Type: application/json\r\n",
+            'method'  => 'POST',
+            'content' => json_encode($postData),
+        ],
+    ];
+    $context = stream_context_create($options);
+    $response = file_get_contents($apiUrl, false, $context);
+    return $response ? json_decode($response, true) : null;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
     $email = trim($_POST["email"]);
@@ -10,36 +38,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // extra comment
-    // API URL (Flask backend)
     $api_url = "http://127.0.0.1:5504/api/signup";
-
-    // Prepare data
-    $postData = json_encode([
+    $postData = [
         "username" => $username,
         "email" => $email,
         "password" => $password
-    ]);
+    ];
 
-    // Initialize cURL
-    $ch = curl_init($api_url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, [
-        "Content-Type: application/json"
-    ]);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+    $response = apiPost($api_url, $postData);
 
-    // Execute the request
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
-
-    // Handle response
-    if ($httpCode == 201) {
+    if ($response && isset($response['success'])) {
         echo json_encode(["success" => "User registered successfully"]);
     } else {
-        echo $response;
+        echo json_encode(["error" => $response['error'] ?? "Failed to register user. Please try again."]);
     }
     exit;
 }
