@@ -72,3 +72,7 @@ async function sendMessage() {
         }
     }
 }
+
+function goToUrl(url) {
+    window.location.href
+};

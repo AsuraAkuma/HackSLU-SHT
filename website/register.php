@@ -64,53 +64,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="./CSS/login.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const registerForm = document.getElementById("registerForm");
-            const registerError = document.getElementById("register-error");
-
-            registerForm.addEventListener("submit", async function (event) {
-                event.preventDefault();
-                registerError.innerHTML = "";
-
-                const formData = new FormData(registerForm);
-                
-                const response = await fetch("register.php", {
-                    method: "POST",
-                    body: formData
-                });
-
-                const result = await response.json();
-                if (result.error) {
-                    registerError.innerHTML = result.error;
-                } else {
-                    window.location.href = "login.php";
-                }
-            });
-        });
-    </script>
+    <script src="./JS/register.js" type="module"></script>
 </head>
 
 <body>
-    <div class="register-container">
-        <h1>Register</h1>
-        <form id="registerForm" method="POST">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+    <div class="register-container"></div>
+    <h1>Register</h1>
+    <form id="registerForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
 
-            <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
 
-            <p id="register-error" style="color: red;"></p>
+        <p id="register-error" style="color: red;"></p>
 
-            <button type="submit">Register</button>
-        </form>
+        <button type="submit" id="register-button">Register</button>
+    </form>
     </div>
 </body>
+
 </html>

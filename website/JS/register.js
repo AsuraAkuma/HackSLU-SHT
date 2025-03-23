@@ -1,28 +1,30 @@
-import config from '../config.json';
+import config from '../../web/JS/config.json' with {type: "json"};
 
 window.addEventListener('load', function () {
 
     const registerButton = document.getElementById('register-button');
-    const registerEmail = document.getElementById('register-email');
-    const registerPassword = document.getElementById('register-password');
     const registerError = document.getElementById('register-error');
-    const registerForm = document.getElementById('register-form');
+    const registerForm = document.getElementById('registerForm');
 
     registerForm.addEventListener('submit', async function (event) {
         event.preventDefault();
         registerError.innerHTML = '';
         registerButton.disabled = true;
-        const email = registerEmail.value;
-        const password = registerPassword.value;
-        if (email && password) {
-            const req = await fetch(`${config.apiURL}register`, {
+        const formData = new FormData(registerForm);
+        const email = formData.get('email');
+        const registerPassword1 = formData.get('password');
+        const registerPassword2 = formData.get('confirmPassword');
+        const username = formData.get('username');
+        if (email && (registerPassword1 === registerPassword2)) {
+            const req = await fetch(`${config.apiURL}/signup`, {
                 method: 'POST',
+                mode: "cors",
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email, password })
+                body: JSON.stringify({ email, password: registerPassword1, username })
             }).catch(error => {
-                registerError.innerHTML = 'Server error';
+                registerError.innerHTML = error;
             });
             if (req.status === 200) {
                 const res = await req.json();
@@ -32,11 +34,11 @@ window.addEventListener('load', function () {
                     window.location.href = '/login';
                 }
             } else {
-                registerError.innerHTML = 'Server error';
+                registerError.innerHTML = "Server error";
             }
 
         } else {
-            registerError.innerHTML = 'Please fill in all fields';
+            registerError.innerHTML = 'Please fill in all fields correctly';
         }
         registerButton.disabled = false;
     });
