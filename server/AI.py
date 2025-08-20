@@ -4,7 +4,7 @@ import json
 
 # Replace with your OpenRouter API key
 
-with open('config.json', 'r') as file:
+with open('../config.json', 'r') as file:
     data = json.load(file)
 
 API_KEY = data["APIKEY"]

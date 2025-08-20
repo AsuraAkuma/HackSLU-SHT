@@ -5,10 +5,20 @@ import json
 from dbConnect import getConnection  # Import the correct function
 import bcrypt 
 from flask_cors import CORS  # Import CORS
+import os
 
-# Replace with your OpenRouter API key
-with open('config.json', 'r') as file:
-    data = json.load(file)
+# Get the absolute path of the directory containing this script
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the absolute path to config.json
+config_path = os.path.join(base_dir, '../config.json')
+
+# Load the configuration file
+try:
+    with open(config_path, 'r') as file:
+        data = json.load(file)
+except FileNotFoundError:
+    raise FileNotFoundError(f"Configuration file not found at {config_path}. Please ensure the file exists.")
 
 API_KEY = data["APIKEY"]
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
@@ -20,7 +30,7 @@ headers = {
 }
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": ["http://127.0.0.1:3000", "http://localhost:3000","http://localhost"]}})
+CORS(app, resources={r"/*": {"origins": ["http://127.0.0.1:5504", "http://localhost:5504","http://localhost"]}})
 
 # Test the database connection when the app starts
 conn = getConnection()  # Try to get the connection
