@@ -1,3 +1,4 @@
+# app.py: Main Flask backend server for API endpoints, authentication, and chatbot integration.
 from flask import Flask, jsonify, request
 import requests
 import json

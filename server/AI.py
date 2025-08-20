@@ -1,3 +1,4 @@
+# AI.py: Provides functions for interacting with the AI chatbot API.
 import requests
 import json
 

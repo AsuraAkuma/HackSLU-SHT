@@ -1,3 +1,4 @@
+// register.js: Handles user registration form submission and signup via API.
 import config from './config.json' with {type: "json"};
 
 window.addEventListener('load', function () {

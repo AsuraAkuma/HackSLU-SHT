@@ -1,3 +1,4 @@
+// chatbot.js: Handles frontend chatbot UI and communication with backend AI API.
 import config from './config.json' with {type: "json"};
 
 window.addEventListener('load', function () {

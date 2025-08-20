@@ -1,3 +1,4 @@
+// register.php: Handles user registration logic and API communication for signup.
 <?php
 $config = json_decode(file_get_contents('./JS/config.json'), true);
 session_start();

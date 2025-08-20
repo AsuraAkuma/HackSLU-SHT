@@ -1,3 +1,4 @@
+// login.js: Handles user login form submission and authentication via API.
 import config from '../config.json';
 
 window.addEventListener('load', function () {

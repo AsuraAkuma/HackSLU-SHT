@@ -1,3 +1,4 @@
+// login.php: Handles user login logic, session management, and database authentication.
 <?php
 // Turn on error reporting.
 error_reporting(E_ALL);

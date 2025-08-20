@@ -1,3 +1,4 @@
+# dbConnect.py: Manages MySQL database connection for backend operations.
 import mysql.connector
 
 def getConnection():

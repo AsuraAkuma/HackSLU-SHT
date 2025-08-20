@@ -1,3 +1,4 @@
+// scheduler.php: Manages appointment scheduling, professional directory, and API integration.
 <?php
 $config = json_decode(file_get_contents('./JS/config.json'), true);
 // Turn on error reporting.
